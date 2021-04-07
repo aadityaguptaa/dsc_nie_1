@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.dsc_nie.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_aboutUs"
+            app:destination="@id/aboutUs" />
+        <action
+            android:id="@+id/action_homeFragment_to_techTeamFragment"
+            app:destination="@id/techTeamFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUs"
+        android:name="com.example.dsc_nie.AboutUsFragment"
+        android:label="AboutUs" />
+    <fragment
+        android:id="@+id/techTeamFragment"
+        android:name="com.example.dsc_nie.teams_intro.TechTeamFragment"
+        android:label="TechTeamFragment" />
+</navigation>

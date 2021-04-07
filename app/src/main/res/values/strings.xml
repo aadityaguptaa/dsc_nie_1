@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">DSC-NIE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="good_string">Good</string>
+    <string name="morning_string">Morning</string>
+    <string name="afternoon_string">Afternoon</string>
+    <string name="evening_string">Evening</string>
+    <string name="creativity_lead">CREATIVITY LEAD</string>
+    <string name="editorial_lead">EDITORIAL LEAD</string>
+    <string name="outreach_lead">OUTREACH LEAD</string>
+    <string name="events_lead">EVENTS LEAD</string>
+    <string name="design_lead">DESIGN LEAD</string>
+    <string name="marketing_lead">MARKETING LEAD</string>
+    <string name="management_lead">MANAGEMENT LEAD</string>
+    <string name="dsc_lead">DSC NIE LEAD</string>
+    <string name="web_dev_lead_lead">WEB DEV LEAD</string>
+    <string name="technical_lead">TECHNICAL LEAD</string>
+    <string name="technical_advisor">TECHNICAL ADVISOR</string>
+    <string name="android_lead">ANDROID LEAD</string>
+    <string name="ml_lead">ML LEAD</string>
+    <string name="microcontrollers_lead">MICROCONTROLLERS LEAD</string>
+
+    <string name="aditi">Aditi Narayan\n3rd year, ECE</string>
+    <string name="deepthi">Deepthi Nanjunda\n2nd year, ISE</string>
+    <string name="dharitri">Dharitri M\n3rd year, CSE</string>
+    <string name="divya">Divya Choudhary\n3rd year, ISE</string>
+    <string name="lohith">Lohith DS\n4th year, ECE</string>
+    <string name="prabhajana">Prabhajana SK\n3rd year, ECE</string>
+    <string name="pulkit">Pulkit Singh\n3rd year, CSE</string>
+    <string name="sathwik">Sathwik Bharadwaj\n2nd year, MEC</string>
+    <string name="shriyank">Shriyank Pandey\n3rd year, CSE</string>
+    <string name="tulsi">Tulsi M\n3th year, ECE</string>
+    <string name="raghav">Raghav Kaushal\n2nd year, CSE</string>
+    <string name="rishabh">Rishabh Singhvi\n2nd year, CSE</string>
+    <string name="sanskar">Sanskar Agarwal\n2nd year, CSE</string>
+    <string name="pranav">Pranav B\n2nd year, CSE</string>
+    <string name="tanmoy">Tanmoy Mazumdar\n2nd year, ISE</string>
+    <string name="iresh">Iresh Sharma\n2nd year, CSE</string>
+    <string name="aditya">Aditya Gupta\n2nd year, ISE</string>
+    <string name="harsh">Harsh Vardhan\n3rd year, CSE</string>
+    <string name="shujan">Shujan Pannag\n3rd year, ECE</string>
+    <string name="pratyusha">Pratyusha R\n3rd year, ECE</string>
+
+
+    <string name="description"> We, Developer Student Clubs are initiative taken by Google Developers taken to bridge the gap between theory and application. DSC started in India in 2017 and now our community spreads across the whole Globe.\n\nAt a base level, we are university-based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a DSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their community.\n\n
+We host many hands-on-workshops, boot camps, study jams to make you technically inclined. To do so we are equipped with the massive community who constantly collaborate and resources handful curated by Google, so you don’t have to have second thoughts on the quality of the content delivered from us.
+We are not just a club; we are a community!\n\nWe look for real-world problems and try to build products on it with the help of technology, which would help our community a better place to live in.
+So come join us on this amazing journey!\n\nWe are new so we have the fresh scent everyone requires!</string>
+    <string name="discord_description">DiscordImage</string>
+    <string name="dsc_logo_description">dsc nie logo</string>
+    <string name="instagram_description">Instagram Image</string>
+    <string name="twitter_description">twitter image</string>
+    <string name="linkedin_description">linkedin image</string>
+    <string name="fvaegvev_com">fvaegvev.com</string>
+
+
+</resources>
