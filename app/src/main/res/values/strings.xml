@@ -22,7 +22,8 @@
     <string name="ml_lead">ML LEAD</string>
     <string name="microcontrollers_lead">MICROCONTROLLERS LEAD</string>
 
-    <string name="aditi">Aditi Narayan\n3rd year, ECE</string>
+    <string name="aditi">Aditi Narayan</string>
+    <string name="aditi_year">3rd year, ECE</string>
     <string name="deepthi">Deepthi Nanjunda\n2nd year, ISE</string>
     <string name="dharitri">Dharitri M\n3rd year, CSE</string>
     <string name="divya">Divya Choudhary\n3rd year, ISE</string>
@@ -33,15 +34,24 @@
     <string name="shriyank">Shriyank Pandey\n3rd year, CSE</string>
     <string name="tulsi">Tulsi M\n3th year, ECE</string>
     <string name="raghav">Raghav Kaushal\n2nd year, CSE</string>
-    <string name="rishabh">Rishabh Singhvi\n2nd year, CSE</string>
-    <string name="sanskar">Sanskar Agarwal\n2nd year, CSE</string>
-    <string name="pranav">Pranav B\n2nd year, CSE</string>
-    <string name="tanmoy">Tanmoy Mazumdar\n2nd year, ISE</string>
-    <string name="iresh">Iresh Sharma\n2nd year, CSE</string>
-    <string name="aditya">Aditya Gupta\n2nd year, ISE</string>
-    <string name="harsh">Harsh Vardhan\n3rd year, CSE</string>
-    <string name="shujan">Shujan Pannag\n3rd year, ECE</string>
-    <string name="pratyusha">Pratyusha R\n3rd year, ECE</string>
+    <string name="rishabh">Rishabh Singhvi</string>
+    <string name="rishabh_year">3rd year, CSE</string>
+    <string name="sanskar">Sanskar Agarwal</string>
+    <string name="sanskar_year">3rd year, CSE</string>
+    <string name="pranav">Pranav B</string>
+    <string name="pranav_year">2nd year, CSE</string>
+    <string name="tanmoy">Tanmoy Mazumdar</string>
+    <string name="tanmoy_year">2nd year, ISE</string>
+    <string name="iresh">Iresh Sharma</string>
+    <string name="iresh_year">2nd year, CSE</string>
+    <string name="aditya">Aditya Gupta</string>
+    <string name="aditya_year">2nd year, ISE</string>
+    <string name="harsh">Harsh Vardhan</string>
+    <string name="harsh_year">3rd year, CSE</string>
+    <string name="shujan">Shujan Pannag</string>
+    <string name="shujan_year">3rd year, ECE</string>
+    <string name="pratyusha">Pratyusha R</string>
+    <string name="pratyusha_year">3rd year, ECE</string>
 
 
     <string name="description"> We, Developer Student Clubs are initiative taken by Google Developers taken to bridge the gap between theory and application. DSC started in India in 2017 and now our community spreads across the whole Globe.\n\nAt a base level, we are university-based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome. By joining a DSC, students grow their knowledge in a peer-to-peer learning environment and build solutions for local businesses and their community.\n\n
@@ -54,6 +64,11 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="twitter_description">twitter image</string>
     <string name="linkedin_description">linkedin image</string>
     <string name="fvaegvev_com">fvaegvev.com</string>
+    <string name="adityaDescription">A potterhead and greek mythology enthusiast who mainly programs in Java and has recently ventured out into Python. Is trying out ML to see what all the fuss is about and he might actually ❤ it. Likes solving problems on hackerrank. Currently an undergrad@NIE who loves to develop android applications.</string>
+    <string name="aditya_email">4ni19is007_a@nie.ac.in</string>
+    <string name="aditya_facebook">https://www.facebook.com/aditya.gupta.9066389/</string>
+    <string name="aditya_instagram">"https://www.instagram.com/adi.tya_._/"</string>
+
 
 
 </resources>

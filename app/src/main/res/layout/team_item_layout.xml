@@ -1,72 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
-    <androidx.cardview.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/teamCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?selectableItemBackground"
-        app:cardCornerRadius="10dp"
-        android:id="@+id/teamCardView">
+        android:background="#88CECECE"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            style="@style/CardView.Light"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/rl_wrapper"
-            android:orientation="horizontal"
-            android:background="@drawable/background_blue"
-            >
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
 
-            <ImageView
-                android:layout_width= "150dp"
-                android:layout_height="150dp"
-                android:id="@+id/item_imageView"
-                android:layout_centerVertical="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
-                />
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/item_relative"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/item_title"
+                <ImageView
+                    android:id="@+id/CoreImage"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/open_sans_semibold"
-                    android:text="Title"
-                    android:autoSizeTextType="uniform"
-                    android:textColor="@color/white"
-                    android:textSize="22sp"
-                    />
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/adityaone" />
 
                 <TextView
-                    android:id="@+id/item_description"
+                    android:id="@+id/CoreName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="30dp"
-                    android:fontFamily="@font/open_sans"
-                    android:text="This is a description"
-                    android:textColor="#E3D7D7"
-                    android:textSize="20sp"
-                    android:textStyle="italic" />
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="18dp"
+                    android:text="Cafe Blanca"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/CorePosition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:text="ISE, 2nd year"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="#000000" />
 
 
-            </RelativeLayout>
-        </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/expandableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical">
 
-    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/CoreDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="18dp"
+                        android:text="Small plates, salad and sandwiches an intimate setting with 12 indoor seats plus patio seating."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/secondaryTextColor" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginEnd="18dp"
+                        android:background="#88888888" />
+
+                    <LinearLayout
+                        android:id="@+id/TeamItemContactLinearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/InstagramContactLinearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/InstagramLogoBlackAndWhite"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="18dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginEnd="18dp"
+                                app:srcCompat="@drawable/instagramone" />
+
+                            <TextView
+                                android:id="@+id/CoreInstagramLink"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:autoLink="all|web"
+                                android:clickable="false"
+                                android:singleLine="true"
+                                android:textAllCaps="false"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="#000000"
+                                android:textColorLink="#1D1D20"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/FacebookContactLinearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/FacebookLogoBlackAndWhite"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="18dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginEnd="18dp"
+                                app:srcCompat="@drawable/facebookone" />
+
+                            <TextView
+                                android:id="@+id/CoreFacebookLink"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:autoLink="web"
+                                android:singleLine="true"
+                                android:text="adi.tya_._"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="#000000"
+                                android:textColorLink="#1D1D20"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/EmailContactLinearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/GmailLogoBlackAndWhite"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="18dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginEnd="18dp"
+                                app:srcCompat="@drawable/gmailone" />
+
+                            <TextView
+                                android:id="@+id/CoreEmailLink"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:autoLink="web|email"
+                                android:singleLine="true"
+                                android:text="rockonman3@gmail.com"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="#000000"
+                                android:textColorLink="#1D1D20"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="18dp"
+                    android:background="#88888888" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 </layout>
