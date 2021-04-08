@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">DSC-NIE</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_picture">Profile Picture</string>
     <string name="good_string">Good</string>
@@ -68,7 +67,6 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="aditya_email">4ni19is007_a@nie.ac.in</string>
     <string name="aditya_facebook">https://www.facebook.com/aditya.gupta.9066389/</string>
     <string name="aditya_instagram">"https://www.instagram.com/adi.tya_._/"</string>
-
 
 
 </resources>

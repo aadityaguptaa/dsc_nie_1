@@ -36,6 +36,10 @@ class CategoryItemAdapter(private val context: Context?, private val categoryIte
             holder.itemImage.setOnClickListener{view: View ->
                 Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_techTeamFragment)
             }
+        }else if(categoryItem[position].itemId == 9){
+            holder.itemImage.setOnClickListener{view: View ->
+                Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_managementTeamFragment)
+            }
         }
     }
 

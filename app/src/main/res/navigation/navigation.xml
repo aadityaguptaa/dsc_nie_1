@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_techTeamFragment"
             app:destination="@id/techTeamFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_managementTeamFragment"
+            app:destination="@id/managementTeamFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUs"
@@ -25,4 +28,8 @@
         android:id="@+id/techTeamFragment"
         android:name="com.example.dsc_nie.teams_intro.TechTeamFragment"
         android:label="TechTeamFragment" />
+    <fragment
+        android:id="@+id/managementTeamFragment"
+        android:name="com.example.dsc_nie.teams_intro.ManagementTeamFragment"
+        android:label="ManagementTeamFragment" />
 </navigation>
