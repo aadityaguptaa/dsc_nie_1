@@ -1,5 +1,7 @@
 package com.example.dsc_nie.model
 
-class CategoryItem(var itemId: Int, var imageUrl: Int){
+import android.graphics.Bitmap
+
+class CategoryItem(var itemId: Int, var imageID: Int, var imageURL: String = ""){
 
 }

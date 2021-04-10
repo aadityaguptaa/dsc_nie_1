@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "389259274274",
+    "project_id": "dsc-nie-a446c",
+    "storage_bucket": "dsc-nie-a446c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389259274274:android:71328fa24db586e460c27b",
+        "android_client_info": {
+          "package_name": "com.example.dsc_nie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389259274274-2egnoekgi42mp1mgiqj5fs7e1a2e9enb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2qSEDyElSRWXC2xxeAeLXSmFA8JXpENk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389259274274-2egnoekgi42mp1mgiqj5fs7e1a2e9enb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

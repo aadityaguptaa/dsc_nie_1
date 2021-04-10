@@ -1,4 +1,8 @@
 <resources>
+    <string name="techTeamId">991</string>
+    <string name="managementTeamId">992</string>
+    <string name="aboutFragmentId">993</string>
+
     <string name="app_name">DSC-NIE</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_picture">Profile Picture</string>
@@ -67,6 +71,7 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="aditya_email">4ni19is007_a@nie.ac.in</string>
     <string name="aditya_facebook">https://www.facebook.com/aditya.gupta.9066389/</string>
     <string name="aditya_instagram">"https://www.instagram.com/adi.tya_._/"</string>
+    <string name="categoryitemimage">categoryItemImage</string>
 
 
 </resources>
