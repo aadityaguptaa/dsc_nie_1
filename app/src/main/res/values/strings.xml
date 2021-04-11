@@ -72,6 +72,11 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="aditya_facebook">https://www.facebook.com/aditya.gupta.9066389/</string>
     <string name="aditya_instagram">"https://www.instagram.com/adi.tya_._/"</string>
     <string name="categoryitemimage">categoryItemImage</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">password</string>
+    <string name="log_in">Log in</string>
+    <string name="codeimage">codeImage</string>
+    <string name="sign_up">Sign up</string>
 
 
 </resources>

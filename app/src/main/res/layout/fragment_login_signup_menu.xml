@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LoginSignUpMenuLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/loginbg">
+
+        <ImageView
+            android:id="@+id/LoginSignUpCodeImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="200dp"
+            android:contentDescription="@string/codeimage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/code" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/LSLoginButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/log_in"
+            android:textColor="#000000"
+            app:icon="@drawable/ic_baseline_login_24"
+
+            app:iconTint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/LpginPageLoginButton"
+            app:layout_constraintEnd_toEndOf="@+id/LoginSignUpCodeImageView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/LoginSignUpCodeImageView"
+            app:layout_constraintTop_toBottomOf="@+id/LoginSignUpCodeImageView"
+            app:layout_constraintVertical_bias="0.19"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:strokeColor="#000000" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/LpginPageLoginButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:text="@string/sign_up"
+            android:textColor="#000000"
+            app:icon="@drawable/ic_baseline_add_24"
+
+            app:iconTint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/LSLoginButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/LSLoginButton"
+            app:layout_constraintTop_toBottomOf="@+id/LSLoginButton"
+            app:strokeColor="#000000" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>
