@@ -21,7 +21,7 @@
             app:srcCompat="@drawable/code" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/LSLoginButton"
+            android:id="@+id/LoginSignupPageLoginButton"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             app:icon="@drawable/ic_baseline_login_24"
 
             app:iconTint="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/LpginPageLoginButton"
+            app:layout_constraintBottom_toTopOf="@+id/LoginSignupPageSignUpButton"
             app:layout_constraintEnd_toEndOf="@+id/LoginSignUpCodeImageView"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/LoginSignUpCodeImageView"
@@ -41,7 +41,7 @@
             app:strokeColor="#000000" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/LpginPageLoginButton"
+            android:id="@+id/LoginSignupPageSignUpButton"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,10 +53,10 @@
 
             app:iconTint="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/LSLoginButton"
+            app:layout_constraintEnd_toEndOf="@+id/LoginSignupPageLoginButton"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/LSLoginButton"
-            app:layout_constraintTop_toBottomOf="@+id/LSLoginButton"
+            app:layout_constraintStart_toStartOf="@+id/LoginSignupPageLoginButton"
+            app:layout_constraintTop_toBottomOf="@+id/LoginSignupPageLoginButton"
             app:strokeColor="#000000" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

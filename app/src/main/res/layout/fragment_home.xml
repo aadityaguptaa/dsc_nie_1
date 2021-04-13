@@ -9,7 +9,7 @@
         android:id="@+id/HomeConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+        android:background="@drawable/loginbg"
         tools:context=".HomeFragment">
 
         <!-- TODO: Update blank fragment layout -->
@@ -22,8 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/HomeFirstChildConstraintLayout"
-            gpb:type="chrome_floating_circles"
-            />
+            gpb:type="chrome_floating_circles" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/HomeFirstChildConstraintLayout"

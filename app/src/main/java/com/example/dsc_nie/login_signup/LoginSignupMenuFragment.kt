@@ -23,8 +23,12 @@ class LoginSignupMenuFragment : Fragment() {
             inflater, R.layout.fragment_login_signup_menu, container, false
         )
 
-        binding.LSLoginButton.setOnClickListener { view: View ->
+        binding.LoginSignupPageLoginButton.setOnClickListener { view: View ->
             Navigation.findNavController(view).navigate(R.id.action_loginSignupMenuFragment_to_loginFragment)
+        }
+
+        binding.LoginSignupPageSignUpButton.setOnClickListener { view: View ->
+            Navigation.findNavController(view).navigate(R.id.action_loginSignupMenuFragment_to_signUpFragment)
         }
         return binding.root
     }
