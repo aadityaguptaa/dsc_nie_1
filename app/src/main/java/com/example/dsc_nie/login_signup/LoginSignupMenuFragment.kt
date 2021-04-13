@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import com.example.dsc_nie.R
 import com.example.dsc_nie.databinding.FragmentLoginSignupMenuBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginSignupMenuFragment : Fragment() {
@@ -23,6 +25,11 @@ class LoginSignupMenuFragment : Fragment() {
             inflater, R.layout.fragment_login_signup_menu, container, false
         )
 
+        /*if(FirebaseAuth.getInstance().currentUser!= null){
+            Navigation.findNavController(binding.root.findViewById(R.id.LoginSignupPageLoginButton)).navigate(R.id.action_loginSignupMenuFragment_to_homeFragment)
+        }*/
+
+
         binding.LoginSignupPageLoginButton.setOnClickListener { view: View ->
             Navigation.findNavController(view).navigate(R.id.action_loginSignupMenuFragment_to_loginFragment)
         }
@@ -30,6 +37,7 @@ class LoginSignupMenuFragment : Fragment() {
         binding.LoginSignupPageSignUpButton.setOnClickListener { view: View ->
             Navigation.findNavController(view).navigate(R.id.action_loginSignupMenuFragment_to_signUpFragment)
         }
+
         return binding.root
     }
 

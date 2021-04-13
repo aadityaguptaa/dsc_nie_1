@@ -37,6 +37,7 @@
             app:suffixTextColor="#000000">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/LoginPageEmailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000" />
@@ -66,8 +67,10 @@
             app:suffixTextColor="#000000">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/LoginPagePasswordEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="#000000" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

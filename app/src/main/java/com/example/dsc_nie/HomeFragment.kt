@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -21,6 +23,8 @@ import com.example.dsc_nie.model.AllCategory
 import com.example.dsc_nie.model.CategoryItem
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ListResult
@@ -98,8 +102,11 @@ class HomeFragment : Fragment() {
             }
         }
 
+        /*val firebaseUser: FirebaseUser = FirebaseAuth.getInstance().currentUser
 
+        if(firebaseUser != null){
 
+        }*/
 
         return binding.root
     }
