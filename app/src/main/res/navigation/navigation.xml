@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_loginSignupMenuFragment"
             app:destination="@id/loginSignupMenuFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_eventItemFragment"
+            app:destination="@id/eventItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUs"
@@ -87,4 +90,9 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginSignupMenuFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/eventItemFragment"
+        android:name="com.example.dsc_nie.events.EventItemFragment"
+        android:label="fragment_event_item"
+        tools:layout="@layout/fragment_event_item" />
 </navigation>
