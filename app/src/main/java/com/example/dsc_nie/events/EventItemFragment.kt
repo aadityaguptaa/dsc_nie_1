@@ -26,18 +26,23 @@ class EventItemFragment : Fragment() {
                 inflater, R.layout.fragment_event_item, container, false
         )
 
-        try {
-            var firebaseDatabase = FirebaseDatabase.getInstance().reference.child("aaaaaa").get().addOnCompleteListener {it ->
-                Log.i("abc", it.result!!.child("Title").getValue() as String)
+        val filename = EventItemFragmentArgs.fromBundle(requireArguments()).imageName
+        Log.i("Category", filename)
 
+        try {
+            var firebaseDatabase = FirebaseDatabase.getInstance().reference.child(filename).get().addOnCompleteListener {it ->
+                val Title = it.result!!.child("Title").getValue() as String
                 val Date = it.result!!.child("Date").getValue() as String
                 val Details = it.result!!.child("Details").getValue() as String
                 val Location = it.result!!.child("Location").getValue() as String
                 binding.EventFragmentProgressBar.visibility = View.GONE
                 binding.EventItemCoordinatorLayout.visibility = View.VISIBLE
                 container!!.findViewById<TextView>(R.id.EventLocationTextView).text = Location
-                container!!.findViewById<TextView>(R.id.EventDateTextView).text = Date
-                container!!.findViewById<TextView>(R.id.EventDetailsTextView).text = Details
+                container.findViewById<TextView>(R.id.EventDateTextView).text = Date
+                container.findViewById<TextView>(R.id.EventDetailsTextView).text = Details
+                container.findViewById<TextView>(R.id.EventTitleTextView).text = Title
+
+
             }
 
         }catch (e: Exception){

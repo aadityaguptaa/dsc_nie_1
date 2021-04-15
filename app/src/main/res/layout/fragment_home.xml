@@ -9,7 +9,7 @@
         android:id="@+id/HomeConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/loginbg"
+        android:background="@color/white"
         tools:context=".HomeFragment">
 
         <!-- TODO: Update blank fragment layout -->

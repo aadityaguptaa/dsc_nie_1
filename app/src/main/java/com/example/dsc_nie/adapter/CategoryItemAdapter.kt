@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dsc_nie.HomeFragmentDirections
 import com.example.dsc_nie.R
 import com.example.dsc_nie.model.CategoryItem
 import com.squareup.picasso.Picasso
@@ -36,7 +37,11 @@ class CategoryItemAdapter(private val context: Context?, private val categoryIte
         Log.i("position", "$position" + categoryItem[position].imageURL)
         if(categoryItem[position].imageID == -1){
             Picasso.get().load(categoryItem[position].imageURL).into(holder.itemImage)
-            Log.i("position", "executed")
+            var fileName = categoryItem[position].imageURL.replaceAfterLast('.', "").takeLast(7).removeSuffix(".")
+            holder.itemImage.setOnClickListener{view: View ->
+                Navigation.findNavController(view).navigate(HomeFragmentDirections.actionHomeFragmentToEventItemFragment(fileName))
+            }
+            Log.i("qwerty", fileName)
         }else {
             holder.itemImage.setImageResource(categoryItem[position].imageID)
         }
@@ -55,9 +60,7 @@ class CategoryItemAdapter(private val context: Context?, private val categoryIte
             }
         }
         else if(categoryItem[position].itemId == 11){
-            holder.itemImage.setOnClickListener{view: View ->
-                Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_eventItemFragment)
-            }
+
         }
     }
 

@@ -94,5 +94,9 @@
         android:id="@+id/eventItemFragment"
         android:name="com.example.dsc_nie.events.EventItemFragment"
         android:label="fragment_event_item"
-        tools:layout="@layout/fragment_event_item" />
+        tools:layout="@layout/fragment_event_item" >
+        <argument
+            android:name="imageName"
+            app:argType="string" />
+    </fragment>
 </navigation>

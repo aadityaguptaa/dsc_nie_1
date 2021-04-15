@@ -30,8 +30,7 @@ class UpcomingEventsRecyclerAdapter(private val context: Context?, private val a
 
     override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
         if(allCategory[position].categoryTitle.length==0 || allCategory[position].categoryTitle=="") holder.eventTitle!!.setVisibility(View.GONE) else holder.eventTitle!!.setVisibility(View.VISIBLE)
-        holder.itemRecycler!!.setOnClickListener { view: View ->
-        }
+
         holder.eventTitle!!.text = allCategory[position].categoryTitle
         setCatItemRecycler(holder.itemRecycler!!, allCategory[position].categoryItem)
 
