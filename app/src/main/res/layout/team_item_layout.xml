@@ -8,7 +8,7 @@
         android:id="@+id/teamCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#88CECECE"
+        android:background="#8B515050"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView

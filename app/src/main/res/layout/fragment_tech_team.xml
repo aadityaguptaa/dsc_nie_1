@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:background="#8B515050">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tech_team_recyclerView"
@@ -15,7 +16,7 @@
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
             tools:itemCount="25"
-            tools:listitem="@layout/team_item_layout"/>
+            tools:listitem="@layout/team_item_layout" />
 
     </RelativeLayout>
 </layout>

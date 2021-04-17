@@ -26,8 +26,6 @@ class HomeFragment : Fragment() {
     private var mainCategoryRecycler: RecyclerView? = null
     private var mainRecyclerAdapter: UpcomingEventsRecyclerAdapter? = null
     lateinit var binding: FragmentHomeBinding
-    lateinit var  firebaseStorage: FirebaseStorage
-    lateinit var firebaseReference: StorageReference
     lateinit var image: Bitmap
     val categoryItemList: MutableList<CategoryItem> = ArrayList()
 
@@ -42,11 +40,8 @@ class HomeFragment : Fragment() {
             inflater, R.layout.fragment_home, container, false
         )
         val storage = FirebaseStorage.getInstance()
-        Log.i("abc", storage.toString())
         val storageRef = storage.reference
-        Log.i("abc", storageRef.toString())
         val imageList: ArrayList<String> = ArrayList()
-        var im : Int
         val listAllTask: Task<ListResult> = storageRef.listAll()
 
         listAllTask.addOnCompleteListener { result ->

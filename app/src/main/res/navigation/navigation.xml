@@ -23,8 +23,8 @@
             android:id="@+id/action_homeFragment_to_loginSignupMenuFragment"
             app:destination="@id/loginSignupMenuFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_eventItemFragment"
-            app:destination="@id/eventItemFragment" />
+            android:id="@+id/action_homeFragment_to_pastEventsFragment"
+            app:destination="@id/pastEventsFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUs"
@@ -98,5 +98,13 @@
         <argument
             android:name="imageName"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/pastEventsFragment"
+        android:name="com.example.dsc_nie.events.PastEventsFragment"
+        android:label="PastEventsFragment" >
+        <action
+            android:id="@+id/action_pastEventsFragment_to_eventItemFragment"
+            app:destination="@id/eventItemFragment" />
     </fragment>
 </navigation>
