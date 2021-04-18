@@ -1,4 +1,6 @@
 package com.example.dsc_nie
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.view.LayoutInflater
@@ -8,7 +10,7 @@ import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter (private var titles: List<String>, private var details: List<String>, private var images:List<Int>, private var description: List<String>, private var instagramLink: List<String>, private var facebookLink: List<String>, private var emailLink: List<String>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
+class RecyclerAdapter(private var titles: List<String>, private var details: List<String>, private var images: List<Int>, private var description: List<String>, private var instagramLink: List<String>, private var linkedinLink: List<String>, private var emailLink: List<String>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>(){
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
@@ -20,7 +22,7 @@ class RecyclerAdapter (private var titles: List<String>, private var details: Li
         val cardView: CardView = itemView.findViewById(R.id.cardView)
         val expandableLayout: LinearLayout = itemView.findViewById(R.id.expandableLayout)
         val coreInstagram: TextView = itemView.findViewById(R.id.CoreInstagramLink)
-        val coreFacebook: TextView = itemView.findViewById(R.id.CoreFacebookLink)
+        val coreLinkedin: TextView = itemView.findViewById(R.id.CoreLinkedinLink)
         val coreEmail: TextView = itemView.findViewById(R.id.CoreEmailLink)
 
 
@@ -53,9 +55,14 @@ class RecyclerAdapter (private var titles: List<String>, private var details: Li
         holder.itemDetails.text = details[position]
         holder.itemPicture.setImageResource(images[position])
         holder.itemDescription.text = description[position]
-        holder.coreInstagram.text = instagramLink[position]
-        holder.coreFacebook.text = facebookLink[position]
-        holder.coreEmail.text = emailLink[position]
+
+        //this shit is to turn textviews into hyperlinks... idk why it's this complex ;-;
+        holder.coreEmail.movementMethod = LinkMovementMethod.getInstance()
+        holder.coreInstagram.movementMethod = LinkMovementMethod.getInstance()
+        holder.coreLinkedin.movementMethod = LinkMovementMethod.getInstance()
+        holder.coreInstagram.text = Html.fromHtml("<a href=\"" + instagramLink[position] + "\">"  + "Instagram" + "</a>", Html.FROM_HTML_MODE_COMPACT)
+        holder.coreLinkedin.text = Html.fromHtml("<a href=\"" + linkedinLink[position] + "\">"  + "Linkedin" + "</a>", Html.FROM_HTML_MODE_COMPACT)
+        holder.coreEmail.text = Html.fromHtml("<a href=\"" + emailLink[position] + "\">"  + "Email" + "</a>", Html.FROM_HTML_MODE_COMPACT)
 
     }
 

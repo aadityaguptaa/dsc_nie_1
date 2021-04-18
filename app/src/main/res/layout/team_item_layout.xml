@@ -28,6 +28,7 @@
                     android:id="@+id/CoreImage"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:contentDescription="@string/core_image_description"
                     android:scaleType="centerCrop"
                     android:src="@drawable/adityaone" />
 
@@ -37,7 +38,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="18dp"
-                    android:text="Cafe Blanca"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#000000" />
 
@@ -47,7 +47,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
                     android:layout_marginTop="8dp"
-                    android:text="ISE, 2nd year"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#000000" />
 
@@ -66,7 +65,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="18dp"
                         android:layout_marginEnd="18dp"
-                        android:text="Small plates, salad and sandwiches an intimate setting with 12 indoor seats plus patio seating."
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@color/secondaryTextColor" />
 
@@ -97,6 +95,7 @@
                                 android:layout_marginStart="18dp"
                                 android:layout_marginTop="6dp"
                                 android:layout_marginEnd="18dp"
+                                android:contentDescription="@string/instagram_image"
                                 app:srcCompat="@drawable/instagramlogoblack" />
 
                             <TextView
@@ -104,9 +103,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:autoLink="all|web"
-                                android:clickable="false"
-                                android:singleLine="true"
+                                android:fontFamily="@font/open_sans"
+                                android:singleLine="false"
+                                android:text="@string/aditya_instagram"
                                 android:textAllCaps="false"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="#000000"
@@ -121,22 +120,21 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/FacebookLogoBlackAndWhite"
+                                android:id="@+id/LinkedinLogoBlackAndWhite"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_marginStart="18dp"
                                 android:layout_marginTop="6dp"
                                 android:layout_marginEnd="18dp"
-                                app:srcCompat="@drawable/facebookone" />
+                                android:contentDescription="@string/linkedin_image"
+                                app:srcCompat="@drawable/linkedinlogoblack" />
 
                             <TextView
-                                android:id="@+id/CoreFacebookLink"
+                                android:id="@+id/CoreLinkedinLink"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:autoLink="web"
-                                android:singleLine="true"
-                                android:text="adi.tya_._"
+                                android:clickable="true"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="#000000"
                                 android:textColorLink="#1D1D20"
@@ -156,6 +154,7 @@
                                 android:layout_marginStart="18dp"
                                 android:layout_marginTop="6dp"
                                 android:layout_marginEnd="18dp"
+                                android:contentDescription="@string/email_image"
                                 app:srcCompat="@drawable/gmailone" />
 
                             <TextView
@@ -163,9 +162,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:autoLink="web|email"
-                                android:singleLine="true"
-                                android:text="rockonman3@gmail.com"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="#000000"
                                 android:textColorLink="#1D1D20"

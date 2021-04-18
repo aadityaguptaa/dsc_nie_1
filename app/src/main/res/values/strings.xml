@@ -68,9 +68,9 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="linkedin_description">linkedin image</string>
     <string name="fvaegvev_com">fvaegvev.com</string>
     <string name="adityaDescription">A potterhead and greek mythology enthusiast who mainly programs in Java and has recently ventured out into Python. Is trying out ML to see what all the fuss is about and he might actually ❤ it. Likes solving problems on hackerrank. Currently an undergrad@NIE who loves to develop android applications.</string>
-    <string name="aditya_email">4ni19is007_a@nie.ac.in</string>
-    <string name="aditya_facebook">https://www.facebook.com/aditya.gupta.9066389/</string>
-    <string name="aditya_instagram">"https://www.instagram.com/adi.tya_._/"</string>
+    <string name="aditya_email">mailto:4ni19is007_a@nie.ac.in</string>
+    <string name="aditya_linkedin">https://www.linkedin.com/in/adityagupta985/</string>
+    <string name="aditya_instagram">https://www.instagram.com/adi.tya_._/</string>
     <string name="categoryitemimage">categoryItemImage</string>
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
@@ -94,7 +94,8 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="dsc_linkedin_link"><a href='https://www.linkedin.com/in/dsc-nie-mysore-95a3191b7/'>Linkedin</a></string>
     <string name="dsc_discord_link"><a href='https://discord.gg/auxcKjZCdZ'>Discord</a></string>
     <string name="dsc_twitter_link"><a href='https://twitter.com/DscNie'>Twitter</a></string>
-
-
-
+    <string name="core_image_description">core_image</string>
+    <string name="instagram_image">instagram_image</string>
+    <string name="linkedin_image">linkedin_image</string>
+    <string name="email_image">email_image</string>
 </resources>

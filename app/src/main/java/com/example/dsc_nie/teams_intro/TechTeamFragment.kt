@@ -1,11 +1,11 @@
 package com.example.dsc_nie.teams_intro
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dsc_nie.R
@@ -14,6 +14,8 @@ import com.example.dsc_nie.databinding.FragmentTechTeamBinding
 
 
 class TechTeamFragment : Fragment() {
+
+
     private var titlesList = mutableListOf<String>()
     private var positionList = mutableListOf<String>()
     private var imagesList = mutableListOf<Int>()
@@ -22,31 +24,32 @@ class TechTeamFragment : Fragment() {
     private var facebookList = mutableListOf<String>()
     private var emailList = mutableListOf<String>()
 
-
+    lateinit var binding: FragmentTechTeamBinding
     private lateinit var recyclerView: RecyclerView
 
+
+    //the main function
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val binding: FragmentTechTeamBinding = DataBindingUtil.inflate(
+        binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_tech_team, container, false)
 
         postToList()
-
-
-        recyclerView =  binding.techTeamRecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-        recyclerView.adapter = RecyclerAdapter(titlesList, positionList, imagesList, descList, instagramList, facebookList, emailList)
+        setRecycler()
 
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
+    private fun setRecycler() {
+        recyclerView = binding.techTeamRecyclerView
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.adapter = RecyclerAdapter(titlesList, positionList, imagesList, descList, instagramList, facebookList, emailList)
     }
 
-    private fun addToList(title: String, position: String, image: Int, description: String, instagram: String, facebook: String, email: String){
+
+    private fun addToList(title: String, position: String, image: Int, description: String, instagram: String, facebook: String, email: String) {
         titlesList.add(title)
         positionList.add(position)
         imagesList.add(image)
@@ -56,13 +59,13 @@ class TechTeamFragment : Fragment() {
         emailList.add(email)
     }
 
-    private fun postToList(){
-        addToList(getString(R.string.pratyusha), getString(R.string.dsc_lead), R.drawable.pratyushaone, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
-        addToList(getString(R.string.aditya),getString(R.string.android_lead),  R.drawable.adityaone, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
-        addToList(getString(R.string.harsh),getString(R.string.ml_lead),  R.drawable.harsh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
-        addToList(getString(R.string.iresh),getString(R.string.web_dev_lead_lead),  R.drawable.iresh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
-        addToList(getString(R.string.rishabh),getString(R.string.web_dev_lead_lead),  R.drawable.rishabh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
-        addToList(getString(R.string.sanskar),getString(R.string.technical_lead),  R.drawable.sanskar, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
-        addToList(getString(R.string.shujan),getString(R.string.microcontrollers_lead),  R.drawable.shujan, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
+    private fun postToList() {
+        addToList(getString(R.string.pratyusha), getString(R.string.dsc_lead), R.drawable.pratyushaone, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
+        addToList(getString(R.string.aditya), getString(R.string.android_lead), R.drawable.adityaone, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
+        addToList(getString(R.string.harsh), getString(R.string.ml_lead), R.drawable.harsh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
+        addToList(getString(R.string.iresh), getString(R.string.web_dev_lead_lead), R.drawable.iresh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
+        addToList(getString(R.string.rishabh), getString(R.string.web_dev_lead_lead), R.drawable.rishabh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
+        addToList(getString(R.string.sanskar), getString(R.string.technical_lead), R.drawable.sanskar, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
+        addToList(getString(R.string.shujan), getString(R.string.microcontrollers_lead), R.drawable.shujan, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
     }
 }
