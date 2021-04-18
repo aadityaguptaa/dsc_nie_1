@@ -18,8 +18,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/dsc_logo_description"
-            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
             android:src="@drawable/dscnielogo" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:background="#88888888" />
 
         <ScrollView
             android:id="@+id/AboutScrollView"
@@ -40,10 +50,18 @@
                     android:lineSpacingMultiplier="1.2"
                     android:text="@string/description"
                     android:textColor="@color/black"
-                    android:textSize="18sp"></TextView>
+                    android:textSize="18sp"/>
 
             </LinearLayout>
         </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:background="#88888888" />
 
         <LinearLayout
             android:id="@+id/AboutLinksLinearLayout"
@@ -71,15 +89,19 @@
                         android:layout_gravity="center"
                         android:contentDescription="@string/instagram_description"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/instagram" />
+                        android:src="@drawable/instagramlogoblack" />
 
                     <TextView
+                        android:id="@+id/DSCInstagramLinkTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
-                        android:text="fvaegvev.com"
-                        android:textColor="#000000" />
+                        android:fontFamily="@font/open_sans"
+                        android:linksClickable="true"
+                        android:text="@string/dsc_instagram_link"
+                        android:textColor="#000000"
+                        android:textColorLink="#201E1E" />
 
                 </LinearLayout>
 
@@ -95,15 +117,18 @@
                         android:layout_gravity="center"
                         android:contentDescription="@string/discord_description"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/discord" />
+                        android:src="@drawable/discordlogoblack" />
 
                     <TextView
+                        android:id="@+id/DSCDiscordLinkTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
-                        android:text="@string/fvaegvev_com"
-                        android:textColor="#000000" />
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/dsc_discord_link"
+                        android:textColor="#000000"
+                        android:textColorLink="#201E1E" />
 
                 </LinearLayout>
 
@@ -127,15 +152,18 @@
                         android:layout_gravity="center"
                         android:contentDescription="@string/twitter_description"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/twitter" />
+                        android:src="@drawable/twitterlogoblack" />
 
                     <TextView
+                        android:id="@+id/DSCTwitterLinkTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
-                        android:text="fvaegvev.com"
-                        android:textColor="#000000" />
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/dsc_twitter_link"
+                        android:textColor="#000000"
+                        android:textColorLink="#201E1E" />
 
                 </LinearLayout>
 
@@ -149,17 +177,22 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
+                        android:layout_margin="2dp"
                         android:contentDescription="@string/linkedin_description"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/linkedin" />
+                        android:padding="2dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/linkedinlogoblack" />
 
                     <TextView
+                        android:id="@+id/DSCLinkedinLinkTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
-                        android:text="fvaegvev.com"
-                        android:textColor="#000000" />
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/dsc_linkedin_link"
+                        android:textColor="#000000"
+                        android:textColorLink="#201E1E" />
 
                 </LinearLayout>
 

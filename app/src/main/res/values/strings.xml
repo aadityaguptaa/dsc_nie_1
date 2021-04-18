@@ -90,6 +90,11 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="date">DATE</string>
     <string name="event_details" />
     <string name="event__details">EVENT DETAILS</string>
+    <string name="dsc_instagram_link"><a href='https://instagram.com/dscnie_mys'>Instagram</a></string>
+    <string name="dsc_linkedin_link"><a href='https://www.linkedin.com/in/dsc-nie-mysore-95a3191b7/'>Linkedin</a></string>
+    <string name="dsc_discord_link"><a href='https://discord.gg/auxcKjZCdZ'>Discord</a></string>
+    <string name="dsc_twitter_link"><a href='https://twitter.com/DscNie'>Twitter</a></string>
+
 
 
 </resources>

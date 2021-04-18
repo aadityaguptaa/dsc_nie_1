@@ -61,10 +61,8 @@ class TechTeamFragment : Fragment() {
         addToList(getString(R.string.aditya),getString(R.string.android_lead),  R.drawable.adityaone, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
         addToList(getString(R.string.harsh),getString(R.string.ml_lead),  R.drawable.harsh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
         addToList(getString(R.string.iresh),getString(R.string.web_dev_lead_lead),  R.drawable.iresh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
-        addToList(getString(R.string.pranav),getString(R.string.technical_advisor),  R.drawable.pranav, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
         addToList(getString(R.string.rishabh),getString(R.string.web_dev_lead_lead),  R.drawable.rishabh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
         addToList(getString(R.string.sanskar),getString(R.string.technical_lead),  R.drawable.sanskar, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
         addToList(getString(R.string.shujan),getString(R.string.microcontrollers_lead),  R.drawable.shujan, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
-        addToList(getString(R.string.tanmoy),getString(R.string.android_lead),  R.drawable.tanmoy, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_facebook), getString(R.string.aditya_email))
     }
 }
