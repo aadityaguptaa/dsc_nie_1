@@ -6,62 +6,72 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.dsc_nie.R
-import com.example.dsc_nie.databinding.EventItemBottomSheetBinding
 import com.example.dsc_nie.databinding.FragmentEventItemBinding
-import com.google.firebase.database.FirebaseDatabase
-import com.squareup.picasso.Picasso
-import java.lang.Exception
 
 
 class EventItemFragment : Fragment() {
+
+    //For reference to layout binding
     lateinit var binding: FragmentEventItemBinding
 
-    lateinit var EventImage: ImageView
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+    lateinit var viewModel: EventItemViewModel
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
+        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_event_item, container, false
+            inflater, R.layout.fragment_event_item, container, false
         )
 
+        viewModel = ViewModelProviders.of(this).get(EventItemViewModel::class.java)
         val filename = EventItemFragmentArgs.fromBundle(requireArguments()).imageName
         Log.i("Category", filename)
-        EventImage = binding.EventItemImageView
 
-        try {
-            var firebaseDatabase = FirebaseDatabase.getInstance().reference.child(filename).get().addOnCompleteListener {it ->
-                val Title = it.result!!.child("Title").getValue() as String
-                val Date = it.result!!.child("Date").getValue() as String
-                val Details = it.result!!.child("Details").getValue() as String
-                val Location = it.result!!.child("Location").getValue() as String
-                val ImageURL = it.result!!.child("ImageURL").getValue() as String
-                Picasso.get().load(ImageURL).into(EventImage)
-                binding.EventFragmentProgressBar.visibility = View.GONE
-                binding.EventItemCoordinatorLayout.visibility = View.VISIBLE
-                container!!.findViewById<TextView>(R.id.EventLocationTextView).text = Location
-                container.findViewById<TextView>(R.id.EventDateTextView).text = Date
-                container.findViewById<TextView>(R.id.EventDetailsTextView).text = Details
-                container.findViewById<TextView>(R.id.EventTitleTextView).text = Title
-
-            }
-
-        }catch (e: Exception){
-            Toast.makeText(
-                context,
-                "Something went wrong, please try again/n Exception: "+ e.cause,
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-
+        updateUI(container)
+        viewModel.getChild(filename)
 
         return binding.root
     }
+
+
+
+     fun makeProgressbarInvisible() {
+        binding.EventFragmentProgressBar.visibility = View.GONE
+        binding.EventItemCoordinatorLayout.visibility = View.VISIBLE
+    }
+
+     fun updateUI(container: ViewGroup?){
+
+         viewModel.eventTitle.observe(viewLifecycleOwner, Observer{ newTitle->
+             container!!.findViewById<TextView>(R.id.EventTitleTextView).text = newTitle
+         })
+
+         viewModel.eventDate.observe(viewLifecycleOwner, Observer{ newDate->
+             container!!.findViewById<TextView>(R.id.EventDateTextView).text = newDate
+         })
+
+         viewModel.eventLocation.observe(viewLifecycleOwner, Observer{ newLocation->
+             container!!.findViewById<TextView>(R.id.EventLocationTextView).text = newLocation
+         })
+
+         viewModel.eventDetails.observe(viewLifecycleOwner, Observer{ newDetails->
+             container!!.findViewById<TextView>(R.id.EventDetailsTextView).text = newDetails
+         })
+
+         viewModel.eventImage.observe(viewLifecycleOwner, Observer { newImage ->
+             binding.EventItemImageView.setImageBitmap(newImage)
+             makeProgressbarInvisible()
+         })
+     }
+
 
 
 }

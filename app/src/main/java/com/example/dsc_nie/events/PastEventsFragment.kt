@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dsc_nie.R
@@ -25,45 +27,28 @@ import com.google.firebase.storage.StorageReference
 
 class PastEventsFragment : Fragment() {
 
-
-    val PastEventItemList: MutableList<EventItem> = ArrayList()
+    //Recycler stuff
     private var pastEventsRecycler: RecyclerView? = null
     private var pastEventsRecyclerAdapter: PastEventItemAdapter? = null
-    lateinit var binding: FragmentPastEventsBinding
 
+    //binding and view model               I know I am bad at writing comments! ;-;
+    lateinit var binding: FragmentPastEventsBinding
+    lateinit var viewModel: PastEventsViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
 
+        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_past_events, container, false
         )
-        val storage = FirebaseStorage.getInstance()
-        val storageRef = storage.reference
-        val imageList: ArrayList<String> = ArrayList()
-        val listAllTask: Task<ListResult> = storageRef.listAll()
 
-        listAllTask.addOnCompleteListener { result ->
-            val items: List<StorageReference> = result.result!!.items
-            var count = 0
-            items.forEachIndexed { index, item ->
-                item.downloadUrl.addOnSuccessListener {
-                    imageList.add("$it"); count++
-                    Log.i("ababab", "$it")
-                }.addOnCompleteListener {
-                    if (count == items.size) {
-                        for (i in 0..(count - 1)) {
-                            PastEventItemList.add(EventItem(i, imageList[i]))
-                        }
-                        setPastEventRecycler(PastEventItemList)
-                        binding.PastEventFragmentProgressBar.visibility = View.GONE
-                        binding.pastEventsRecyclerView.visibility = View.VISIBLE
+        viewModel = ViewModelProviders.of(this).get(PastEventsViewModel::class.java)
+        viewModel.done.observe(viewLifecycleOwner, Observer { newList ->
+            setPastEventRecycler(viewModel.PastEventItemList)
+            makeProgressbarInvisible()
+        })
 
-                    }
-                }
-            }
-        }
         return binding.root
     }
 
@@ -73,6 +58,11 @@ class PastEventsFragment : Fragment() {
         pastEventsRecycler!!.layoutManager = layoutManager
         pastEventsRecyclerAdapter = PastEventItemAdapter(requireContext(), Events)
         pastEventsRecycler!!.adapter = pastEventsRecyclerAdapter
+    }
+
+    private fun makeProgressbarInvisible(){
+        binding.PastEventFragmentProgressBar.visibility = View.GONE
+        binding.pastEventsRecyclerView.visibility = View.VISIBLE
     }
 
 

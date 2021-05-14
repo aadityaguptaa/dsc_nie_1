@@ -98,6 +98,7 @@
             android:id="@+id/LoginPageLoginImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/loginicon"
             app:layout_constraintBottom_toTopOf="@+id/LoginPageEmailTextView"
             app:layout_constraintEnd_toEndOf="@+id/LoginPageEmailTextView"
@@ -120,14 +121,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="5dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/don_t_have_an_account"
             android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/LoginPageLoginButton"
             app:layout_constraintEnd_toStartOf="@+id/LoginPageRegisterTextView"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LoginPageLoginButton" />
+            app:layout_constraintTop_toBottomOf="@+id/LoginPageLoginButton"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/LoginPageRegisterTextView"

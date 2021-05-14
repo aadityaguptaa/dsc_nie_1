@@ -98,4 +98,8 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="instagram_image">instagram_image</string>
     <string name="linkedin_image">linkedin_image</string>
     <string name="email_image">email_image</string>
+    <string name="more">more</string>
+    <string name="content_description_more">more_content</string>
+    <string name="content_description_favorite">favorite</string>
+    <string name="favorite">favorite</string>
 </resources>
