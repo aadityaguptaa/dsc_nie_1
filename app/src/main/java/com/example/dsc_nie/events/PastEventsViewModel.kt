@@ -12,7 +12,7 @@ import com.google.firebase.storage.StorageReference
 
 class PastEventsViewModel: ViewModel() {
 
-    val PastEventItemList = mutableListOf<EventItem>()
+    val PastEventItemList = MutableLiveData<List<EventItem>>()
     var done = MutableLiveData<Boolean>()
 
     val storage = FirebaseStorage.getInstance()
@@ -29,6 +29,7 @@ class PastEventsViewModel: ViewModel() {
         listAllTask.addOnCompleteListener { result ->
             val items: List<StorageReference> = result.result!!.items
             var count = 0
+            var list = mutableListOf<EventItem>()
             items.forEachIndexed { index, item ->
                 item.downloadUrl.addOnSuccessListener {
                     imageList.add("$it"); count++
@@ -36,9 +37,9 @@ class PastEventsViewModel: ViewModel() {
                 }.addOnCompleteListener {
                     if (count == items.size) {
                         for (i in 0..(items.size - 1)) {
-                            PastEventItemList.add(EventItem(i, imageList[i]))
+                            list.add(EventItem(i, imageList[i]))
                         }
-                        done.value = true
+                        PastEventItemList.value = list
                     }
                 }
             }

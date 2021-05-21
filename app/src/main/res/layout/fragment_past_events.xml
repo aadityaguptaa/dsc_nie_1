@@ -16,7 +16,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:itemCount="25"
-            tools:listitem="@layout/past_event_item_layout" />
+            tools:listitem="@layout/past_event_item_layout"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
             android:id="@+id/PastEventFragmentProgressBar"

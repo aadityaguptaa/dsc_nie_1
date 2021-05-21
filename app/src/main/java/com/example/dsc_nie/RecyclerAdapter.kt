@@ -22,7 +22,7 @@ class RecyclerAdapter(private var titles: List<String>, private var details: Lis
         val itemDetails: TextView = itemView.findViewById(R.id.CorePosition)
         val itemPicture: ImageView = itemView.findViewById(R.id.CoreImage)
         val itemDescription: TextView = itemView.findViewById(R.id.CoreDescription)
-        val cardView: CardView = itemView.findViewById(R.id.cardView)
+        val cardView: CardView = itemView.findViewById(R.id.pastEventRecyclerCardView)
         val expandableLayout: LinearLayout = itemView.findViewById(R.id.expandableLayout)
         val coreInstagram: TextView = itemView.findViewById(R.id.CoreInstagramLink)
         val coreLinkedin: TextView = itemView.findViewById(R.id.CoreLinkedinLink)
