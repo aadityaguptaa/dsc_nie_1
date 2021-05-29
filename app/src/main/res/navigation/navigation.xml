@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeFragment_to_pastEventsFragment"
             app:destination="@id/pastEventsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_login_material_fragment"
+            app:destination="@id/login_material_fragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUs"
@@ -107,4 +110,9 @@
             android:id="@+id/action_pastEventsFragment_to_eventItemFragment"
             app:destination="@id/eventItemFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/login_material_fragment"
+        android:name="com.example.dsc_nie.login_signup.login_material_fragment"
+        android:label="fragment_login_material_fragment"
+        tools:layout="@layout/fragment_login_material_fragment" />
 </navigation>

@@ -10,32 +10,7 @@
         android:backgroundTint="#00FFFFFF"
         tools:context=".MainActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:liftOnScroll="true">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#FFFFFF"
-                android:theme="@style/GalaxyZooThemeToolbarDarkOverflow"
-                app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:menu="@menu/top_app_bar"
-                app:navigationIcon="@drawable/ic_baseline_menu_24"
-                app:title="Hello"
-                app:titleTextColor="#000000" />
-
-        </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
             android:id="@+id/mainLinearLayout"
@@ -45,7 +20,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+            app:layout_constraintTop_toTopOf="parent">
 
             <!-- Scrollable content -->
 

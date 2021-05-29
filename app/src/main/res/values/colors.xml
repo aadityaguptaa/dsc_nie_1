@@ -9,4 +9,18 @@
     <color name="white">#FFFFFFFF</color>
     <color name="secondaryTextColor">#858585</color>
     <color name="primaryTextColor">#000000</color>
+
+    <color name="colorPrimary">#DB4437</color>
+    <color name="colorPrimaryVarient">#C93B31</color>
+    <color name="colorPrimaryDark">#4285F4</color>
+    <color name="colorPrimaryDarkVarient">#3F75E0</color>
+    <color name="colorAccent">#F4B400</color>
+    <color name="toolbarIconColor">#FFFFFF</color>
+    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name="productGridBackgroundColor">#FFFFFF</color>
+
+    <color name="textInputOutlineColor">#0F9D58</color>
+    <color name="textColorPrimary">#FF000000</color>
+
+
 </resources>

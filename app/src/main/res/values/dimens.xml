@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dsc_recycler_spacing">16dp</dimen>
+    <dimen name="shr_product_grid_reveal_height">200dp</dimen>
+
+
+</resources>
