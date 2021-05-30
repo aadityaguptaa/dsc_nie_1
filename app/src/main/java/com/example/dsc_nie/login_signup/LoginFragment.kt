@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import com.example.dsc_nie.R
@@ -21,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser
 class LoginFragment : Fragment() {
 
     lateinit var binding: FragmentLoginBinding
+    lateinit var viewModel: LoginViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -28,6 +31,8 @@ class LoginFragment : Fragment() {
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_login, container, false
         )
+
+        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
         binding.LoginPageRegisterTextView.setOnClickListener { view: View ->
             Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_signUpFragment)
@@ -52,39 +57,25 @@ class LoginFragment : Fragment() {
                     ).show()
                 }
                 else -> {
-
-                    val email: String = binding.LoginPageEmailEditText.text.toString().trim{ it <= ' '}
-                    val password: String = binding.LoginPagePasswordEditText.text.toString().trim{ it <= ' '}
-
-                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener(
-                            OnCompleteListener<AuthResult> { task ->
-                                if(task.isSuccessful){
-
-                                    val firebaseUser: FirebaseUser = task.result!!.user
-
-                                    Toast.makeText(
-                                            context,
-                                            "You LoggedIn successfully.",
-                                            Toast.LENGTH_SHORT
-                                    ).show()
-
-                                    Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_homeFragment)
-
-
-                                }else{
-
-                                    Toast.makeText(
-                                            context,
-                                            task.exception!!.message.toString(),
-                                            Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-
-                            }
-                    )
+                    viewModel.email = binding.LoginPageEmailEditText.text.toString().trim{ it <= ' '}
+                    viewModel.password = binding.LoginPagePasswordEditText.text.toString().trim{ it <= ' '}
+                    viewModel.iniAuth()
                 }
             }
         }
+
+        viewModel.authSuccess.observe(viewLifecycleOwner, Observer { success ->
+            if(success) {
+                Navigation.findNavController(binding.LoginPageLoginButton)
+                    .navigate(R.id.action_loginFragment_to_homeFragment)
+            }else{
+                Toast.makeText(
+                    context,
+                    "Auth unsuccessful",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
         return binding.root
     }
 

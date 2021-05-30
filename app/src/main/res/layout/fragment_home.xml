@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".HomeFragment">
+        tools:context=".home.HomeFragment">
 
         <LinearLayout
             style="@style/Widget.DSCNIE.Backdrop"
@@ -40,7 +40,7 @@
                 style="@style/Widget.Shrine.Toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/shr_branded_menu"
+                app:navigationIcon="@drawable/dsc_branded_menu"
                 app:title="@string/dsc_app_name" />
         </com.google.android.material.appbar.AppBarLayout>
 

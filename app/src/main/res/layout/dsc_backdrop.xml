@@ -5,43 +5,32 @@
         style="@style/Widget.DSCNIE.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shr_featured_label" />
+        android:text="@string/dsc_about_us" />
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.DSCNIE.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shr_apartment_label" />
+        android:text="@string/dsc_tech_team" />
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.DSCNIE.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shr_accessories_label" />
+        android:text="@string/dsc_management_team" />
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.DSCNIE.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shr_shoes_label" />
+        android:text="@string/dsc_past_events" />
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.DSCNIE.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shr_tops_label" />
+        android:text="@string/dsc_leaderboard" />
 
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.DSCNIE.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/shr_bottoms_label" />
-
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.DSCNIE.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/shr_dresses_label" />
 
     <View
         android:layout_width="56dp"
@@ -53,6 +42,6 @@
         style="@style/Widget.DSCNIE.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shr_account_label" />
+        android:text="@string/dsc_account_label" />
 
 </merge>

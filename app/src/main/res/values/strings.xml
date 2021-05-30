@@ -117,14 +117,12 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="dsc_search_title">Search</string>
 
     //backdrop stuff
-    <string name="shr_featured_label">Featured</string>
-    <string name="shr_apartment_label">Apartment</string>
-    <string name="shr_accessories_label">Accessories</string>
-    <string name="shr_shoes_label">Shoes</string>
-    <string name="shr_tops_label">Tops</string>
-    <string name="shr_bottoms_label">Bottoms</string>
-    <string name="shr_dresses_label">Dresses</string>
-    <string name="shr_account_label">My Account</string>
+    <string name="dsc_about_us">About Us</string>
+    <string name="dsc_leaderboard">Leaderboard</string>
+    <string name="dsc_tech_team">Meet the Tech team</string>
+    <string name="dsc_management_team">Meet the Management team</string>
+    <string name="dsc_past_events">Past Events</string>
+    <string name="dsc_account_label">My Account</string>
     <string name="shr_logo_content_description">Shrine Logo</string>
 
 </resources>

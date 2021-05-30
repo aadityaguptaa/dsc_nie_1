@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dsc_nie.HomeFragmentDirections
 import com.example.dsc_nie.R
 import com.example.dsc_nie.model.CategoryItem
 import com.squareup.picasso.Picasso

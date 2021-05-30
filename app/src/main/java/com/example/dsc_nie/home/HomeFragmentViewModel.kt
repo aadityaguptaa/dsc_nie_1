@@ -1,9 +1,8 @@
-package com.example.dsc_nie
+package com.example.dsc_nie.home
 
-import android.util.Log
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.dsc_nie.R
 import com.example.dsc_nie.model.AllCategory
 import com.example.dsc_nie.model.CategoryItem
 import com.google.android.gms.tasks.Task

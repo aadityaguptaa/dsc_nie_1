@@ -1,4 +1,4 @@
-package com.example.dsc_nie
+package com.example.dsc_nie.home
 
 import android.os.Build
 import android.os.Bundle
@@ -11,8 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dsc_nie.R
 import com.example.dsc_nie.adapter.UpcomingEventsRecyclerAdapter
 import com.example.dsc_nie.databinding.FragmentHomeBinding
 import com.example.dsc_nie.model.AllCategory
@@ -42,13 +45,13 @@ class HomeFragment : Fragment() {
                 requireActivity(),
                 binding.homeFragmentNestedScrollView,
                 AccelerateDecelerateInterpolator(),
-                ContextCompat.getDrawable(requireContext(), R.drawable.shr_branded_menu), // Menu open icon
-                ContextCompat.getDrawable(requireContext(), R.drawable.shr_close_menu)))
+                ContextCompat.getDrawable(requireContext(), R.drawable.dsc_branded_menu), // Menu open icon
+                ContextCompat.getDrawable(requireContext(), R.drawable.dsc_close_menu))
+        )
 
 
         viewModel = ViewModelProviders.of(this).get(HomeFragmentViewModel::class.java)
 
-        //navController = Navigation.findNavController(requireView())
 
         viewModel.done.observe(viewLifecycleOwner, Observer { done->
             setMainCategoryRecycler(viewModel.allCategory)
@@ -62,7 +65,7 @@ class HomeFragment : Fragment() {
         //requireActivity().actionBar!!.isHideOnContentScrollEnabled = true
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            binding.homeFragmentNestedScrollView.background = context?.getDrawable(R.drawable.shr_product_grid_background_shape)
+            binding.homeFragmentNestedScrollView.background = context?.getDrawable(R.drawable.dsc_product_grid_background_shape)
         }
 
         return binding.root
@@ -74,11 +77,11 @@ class HomeFragment : Fragment() {
     }
 
 
-    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         navController = Navigation.findNavController(requireView())
         return NavigationUI.onNavDestinationSelected(item, navController)
                 || super.onOptionsItemSelected(item)
-    }*/
+    }
     private fun setMainCategoryRecycler(allCategory: List<AllCategory>){
         mainCategoryRecycler = binding.EventsRecyclerView
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(context)
