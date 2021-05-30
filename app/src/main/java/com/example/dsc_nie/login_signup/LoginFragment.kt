@@ -26,12 +26,13 @@ class LoginFragment : Fragment() {
     lateinit var viewModel: LoginViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
 
+        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_login, container, false
         )
 
+        //Inflate yhe View Model
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
         binding.LoginPageRegisterTextView.setOnClickListener { view: View ->
@@ -39,28 +40,11 @@ class LoginFragment : Fragment() {
         }
 
 
-        binding.LoginPageLoginButton.setOnClickListener { view: View ->
-            when{
-                TextUtils.isEmpty(binding.LoginPageEmailEditText.text.toString().trim{ it <= ' '}) -> {
-                    Toast.makeText(
-                            context,
-                            "Please Enter Email.",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                }
-
-                TextUtils.isEmpty(binding.LoginPagePasswordEditText.text.toString().trim{ it <= ' '}) -> {
-                    Toast.makeText(
-                            context,
-                            "Please Enter Password.",
-                            Toast.LENGTH_SHORT
-                    ).show()
-                }
-                else -> {
-                    viewModel.email = binding.LoginPageEmailEditText.text.toString().trim{ it <= ' '}
-                    viewModel.password = binding.LoginPagePasswordEditText.text.toString().trim{ it <= ' '}
-                    viewModel.iniAuth()
-                }
+        binding.LoginPageLoginButton.setOnClickListener {
+            if(!checkEmailPasswordEmpty()){
+                viewModel.email = binding.LoginPageEmailEditText.text.toString().trim{ it <= ' '}
+                viewModel.password = binding.LoginPagePasswordEditText.text.toString().trim{ it <= ' '}
+                viewModel.iniAuth()
             }
         }
 
@@ -77,6 +61,30 @@ class LoginFragment : Fragment() {
             }
         })
         return binding.root
+    }
+
+    private fun checkEmailPasswordEmpty(): Boolean{
+        when {
+            TextUtils.isEmpty(binding.LoginPageEmailEditText.text.toString().trim{ it <= ' '}) -> {
+                Toast.makeText(
+                    context,
+                    "Please Enter Email.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return true
+            }
+            TextUtils.isEmpty(binding.LoginPagePasswordEditText.text.toString().trim{ it <= ' '}) -> {
+                Toast.makeText(
+                    context,
+                    "Please Enter Password.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                return true
+            }
+            else -> {
+                return false
+            }
+        }
     }
 
 

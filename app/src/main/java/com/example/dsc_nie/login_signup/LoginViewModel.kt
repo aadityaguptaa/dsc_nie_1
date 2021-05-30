@@ -18,30 +18,32 @@ class LoginViewModel: ViewModel() {
     var password: String = ""
     //lateinit var userImageUrl: Uri
     val authSuccess = MutableLiveData<Boolean>()
+    lateinit var firebaseUser: FirebaseUser
+    lateinit var firebaseAuthLocal: FirebaseAuth
+
+    init {
+        firebaseAuthLocal = FirebaseAuth.getInstance()
+    }
 
     fun iniAuth(){
 
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener(
+        firebaseAuthLocal.signInWithEmailAndPassword(email, password).addOnCompleteListener(
             OnCompleteListener<AuthResult> { task ->
                 if(task.isSuccessful){
-                    val firebaseUser: FirebaseUser = task.result!!.user
-                    try {
-                        Log.i("image", firebaseUser.photoUrl.toString())
-                    }catch (e: Exception){
-
-                    }
-
-                    //userImageUrl = firebaseUser.photoUrl
-
+                    firebaseUser = task.result!!.user
+                    UserGlobal.name = firebaseUser.displayName
+                    UserGlobal.imageUrl = firebaseUser.photoUrl.toString()
                     authSuccess.value = true
-
-
                 }else{
-
                     authSuccess.value = false
                 }
-
             }
         )
     }
+
+}
+
+object UserGlobal{
+    lateinit var name:String
+    lateinit var imageUrl:String
 }

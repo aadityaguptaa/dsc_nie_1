@@ -2,6 +2,7 @@ package com.example.dsc_nie.home
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +19,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dsc_nie.R
 import com.example.dsc_nie.adapter.UpcomingEventsRecyclerAdapter
 import com.example.dsc_nie.databinding.FragmentHomeBinding
+import com.example.dsc_nie.login_signup.UserGlobal
 import com.example.dsc_nie.model.AllCategory
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.squareup.picasso.Picasso
 
 
 class HomeFragment : Fragment() {
@@ -28,6 +33,7 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     lateinit var navController: NavController
     lateinit var viewModel: HomeFragmentViewModel
+    lateinit var firebaseUser: FirebaseUser
 
 
     override fun onCreateView(
@@ -37,6 +43,12 @@ class HomeFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_home, container, false
         )
+
+        firebaseUser = FirebaseAuth.getInstance().currentUser
+
+        Picasso.get().load(firebaseUser.photoUrl.toString()).into(binding.UserProfileImage)
+        binding.UsernameTextView.text = firebaseUser.displayName
+
 
         //to set Action Bar
         (activity as AppCompatActivity).setSupportActionBar(binding.appBar)
