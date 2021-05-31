@@ -3,224 +3,171 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/SignupFragmentConstraintLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/loginbg"
-    tools:context=".login_signup.SignUpFragment">
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/SignUpPageNameTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="5dp"
-        android:hint="@string/name_hint"
-        android:textColorHint="#000000"
-        app:boxStrokeColor="#000000"
-        app:endIconTint="#000000"
-        app:hintTextColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/SignUpPageEmailTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:placeholderTextColor="#000000"
-        app:prefixTextColor="#000000"
-        app:suffixTextColor="#000000">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/SignUpPageNameEditText"
+        <LinearLayout
+            android:id="@+id/SignupFragmentConstraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".login_signup.SignUpFragment">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <ImageView
+                android:id="@+id/SignUpPageLogo"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_google_developers"
+                />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/SignUpPageEmailTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="5dp"
-        android:hint="@string/email_hint"
-        android:textColorHint="#000000"
-        app:boxStrokeColor="#000000"
-        app:endIconTint="#000000"
-        app:hintTextColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/SignUpPagePasswordTextView"
-        app:layout_constraintEnd_toEndOf="@+id/SignUpPageNameTextView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/SignUpPageNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/SignUpPageNameTextView"
-        app:placeholderTextColor="#000000"
-        app:prefixTextColor="#000000"
-        app:suffixTextColor="#000000">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:id="@+id/SignUpPageEmailEditText"
-            android:textColor="#000000" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SignUpPageNameTextView"
+                style="@style/Widget.DSCNIE.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="4dp"
+                android:hint="@string/name_hint">
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SignUpPageNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/SignUpPagePasswordTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="5dp"
-        android:hint="@string/password_hint"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#000000"
-        app:boxStrokeColor="#000000"
-        app:endIconTint="#000000"
-        app:hintTextColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/SignUpPageConfirmPasswordTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/SignUpPageEmailTextView"
-        app:layout_constraintTop_toBottomOf="@+id/SignUpPageEmailTextView"
-        app:placeholderTextColor="#000000"
-        app:prefixTextColor="#000000"
-        app:suffixTextColor="#000000">
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/SignUpPagePasswordEditText"
-            android:textColor="#000000" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SignUpPageEmailTextView"
+                style="@style/Widget.DSCNIE.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="4dp"
+                android:hint="@string/email_hint">
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SignUpPageEmailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#000000" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/SignUpPageConfirmPasswordTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="5dp"
-        android:hint="@string/confirm_password_hint"
-        android:inputType="textEmailAddress"
+            </com.google.android.material.textfield.TextInputLayout>
 
-        android:textColorHint="#000000"
-        app:boxStrokeColor="#000000"
-        app:endIconTint="#000000"
-        app:hintTextColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/SignUpPageUSNTextView"
-        app:layout_constraintEnd_toEndOf="@+id/SignUpPagePasswordTextView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/SignUpPagePasswordTextView"
-        app:layout_constraintTop_toBottomOf="@+id/SignUpPagePasswordTextView"
-        app:placeholderTextColor="#000000"
-        app:prefixTextColor="#000000"
-        app:suffixTextColor="#000000">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SignUpPagePasswordTextView"
+                style="@style/Widget.DSCNIE.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="48dp"
+                android:hint="@string/password_hint"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/SignUpPageConfirmPasswordEditText"
-            android:textColor="#000000" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SignUpPagePasswordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/SignUpPageUSNTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="5dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SignUpPageConfirmPasswordTextView"
+                style="@style/Widget.DSCNIE.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="48dp"
+                android:hint="@string/confirm_password_hint"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true">
 
-        android:hint="@string/usn_hint"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#000000"
-        app:boxStrokeColor="#000000"
-        app:endIconTint="#000000"
-        app:hintTextColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/SignUpPageRegisterButton"
-        app:layout_constraintEnd_toEndOf="@+id/SignUpPageConfirmPasswordTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SignUpPageConfirmPasswordTextView"
-        app:placeholderTextColor="#000000"
-        app:prefixTextColor="#000000"
-        app:suffixTextColor="#000000">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SignUpPageConfirmPasswordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/SignUpPageUSNEditText"
-            android:textColor="#000000" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SignUpPageUSNTextView"
+                style="@style/Widget.DSCNIE.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="4dp"
+                android:hint="@string/usn_hint"
+                android:inputType="textEmailAddress">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/SignUpPageRegisterButton"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SignUpPageUSNEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
+            </com.google.android.material.textfield.TextInputLayout>
 
-        android:text="@string/register_without_underline"
-        android:textColor="#000000"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/SignUpPageRegisterButton"
+                style="@style/Widget.DSCNIE.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/register_without_underline"
+                android:backgroundTint="@color/colorPrimaryDark"
+                app:icon="@drawable/ic_baseline_add_24"
+                app:iconTint="#000000"
+                 />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
 
-        app:icon="@drawable/ic_baseline_add_24"
-        app:iconTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/SignUpPageUSNTextView"
-        app:layout_constraintStart_toStartOf="@+id/SignUpPageUSNTextView"
-        app:layout_constraintTop_toBottomOf="@+id/SignUpPageUSNTextView"
-        app:strokeColor="#000000" />
+                <TextView
+                    android:id="@+id/SignupPageAlreadyHaveAnAccountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/already_have_an_account"
+                    android:textColor="#000000"
+                    />
 
-    <TextView
-        android:id="@+id/SignupPageAlreadyHaveAnAccountTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/already_have_an_account"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/SignupPageLoginTextView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/SignUpPageRegisterButton"
-        app:layout_constraintTop_toBottomOf="@+id/SignUpPageRegisterButton" />
+                <TextView
+                    android:id="@+id/SignupPageLoginTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="all"
+                    android:linksClickable="false"
+                    android:selectAllOnFocus="false"
+                    android:layout_margin="4dp"
+                    android:text="@string/login"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    />
 
-    <TextView
-        android:id="@+id/SignupPageLoginTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="5dp"
-        android:autoLink="all"
-        android:linksClickable="false"
-        android:selectAllOnFocus="false"
-        android:text="@string/login"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/SignupPageAlreadyHaveAnAccountTextView"
-        app:layout_constraintEnd_toEndOf="@+id/SignUpPageRegisterButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/SignupPageAlreadyHaveAnAccountTextView"
-        app:layout_constraintTop_toTopOf="@+id/SignupPageAlreadyHaveAnAccountTextView" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </layout>

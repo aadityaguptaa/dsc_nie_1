@@ -1,6 +1,7 @@
 package com.example.dsc_nie.login_signup
 
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -41,12 +42,21 @@ class LoginFragment : Fragment() {
 
 
         binding.LoginPageLoginButton.setOnClickListener {
-            if(!checkEmailPasswordEmpty()){
-                viewModel.email = binding.LoginPageEmailEditText.text.toString().trim{ it <= ' '}
-                viewModel.password = binding.LoginPagePasswordEditText.text.toString().trim{ it <= ' '}
-                viewModel.iniAuth()
+            if(!checkEmailPasswordEmpty()) {
+                if (!isPasswordValid(binding.LoginPagePasswordEditText.text!!)) {
+                    binding.LoginPagePasswordTextView.error = getString(R.string.dsc_error_password)
+                } else {
+                    // Clear the error.
+                    viewModel.email =
+                        binding.LoginPageEmailEditText.text.toString().trim { it <= ' ' }
+                    viewModel.password =
+                        binding.LoginPagePasswordEditText.text.toString().trim { it <= ' ' }
+                    viewModel.iniAuth()
+                    binding.LoginPagePasswordTextView.error = null
+                }
             }
         }
+
 
         viewModel.authSuccess.observe(viewLifecycleOwner, Observer { success ->
             if(success) {
@@ -55,7 +65,7 @@ class LoginFragment : Fragment() {
             }else{
                 Toast.makeText(
                     context,
-                    "Auth unsuccessful",
+                    "Auth unsuccessful, Please check your Email and Password!",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -85,6 +95,10 @@ class LoginFragment : Fragment() {
                 return false
             }
         }
+    }
+
+    private fun isPasswordValid(text: Editable?): Boolean {
+        return text != null && text.length >= 8
     }
 
 

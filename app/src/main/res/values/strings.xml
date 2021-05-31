@@ -103,13 +103,14 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="content_description_favorite">favorite</string>
     <string name="favorite">favorite</string>
 
-    //Login page stuff
+    //Login-SignUp page stuff
     <string name="dsc_logo_content_description">Google Developers Logo</string>
     <string name="dsc_hint_username">Username</string>
     <string name="dsc_hint_password">Password</string>
     <string name="dsc_button_next">NEXT</string>
     <string name="dsc_button_cancel">CANCEL</string>
     <string name="dsc_error_password">Password must contain at least 8 characters.</string>
+    <string name="dsc_error_passwords_dont_match">Passwords don\'t match</string>
 
     //Home toolbar stuff
     <string name="dsc_app_name">DSC NIE</string>
@@ -124,5 +125,7 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="dsc_past_events">Past Events</string>
     <string name="dsc_account_label">My Account</string>
     <string name="shr_logo_content_description">Shrine Logo</string>
+
+
 
 </resources>
