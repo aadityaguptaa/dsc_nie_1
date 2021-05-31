@@ -110,6 +110,8 @@ class SignUpFragment : Fragment() {
                 val email: String = binding.SignUpPageEmailEditText.text.toString().trim { it <= ' ' }
                 val password: String = binding.SignUpPagePasswordEditText.text.toString().trim { it <= ' ' }
                 val confirmPassword: String = binding.SignUpPageConfirmPasswordEditText.text.toString().trim { it <= ' ' }
+                val name: String = binding.SignUpPageNameEditText.text.toString()
+                val usn: String = binding.SignUpPageUSNEditText.text.toString().trim { it <= ' ' }
 
                 if (!isPasswordValid(binding.SignUpPagePasswordEditText.text!!)) {
                     binding.SignUpPagePasswordTextView.error = getString(R.string.dsc_error_password)
@@ -119,6 +121,7 @@ class SignUpFragment : Fragment() {
                     if(password.equals(confirmPassword)){
                         viewModel.email = email
                         viewModel.password = password
+                        viewModel.name = name
                         viewModel.iniAuth()
                     }else{
                         binding.SignUpPageConfirmPasswordTextView.error = getString(R.string.dsc_error_passwords_dont_match)

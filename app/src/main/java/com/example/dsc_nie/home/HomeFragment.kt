@@ -89,7 +89,7 @@ class HomeFragment : Fragment() {
         if(firebaseUser.photoUrl != null){
             Picasso.get().load(firebaseUser.photoUrl.toString()).into(binding.UserProfileImage)
         }else{
-            binding.UserProfileImage.setImageResource(R.drawable.harry_potter)
+            binding.UserProfileImage.setImageResource(R.drawable.profile_male)
         }
         if(firebaseUser.displayName != null){
             binding.UsernameTextView.text = firebaseUser.displayName

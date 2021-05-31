@@ -52,7 +52,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="56dp"
             android:gravity="center"
-            >
+            android:visibility="gone">
 
             <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
                 style="@android:style/Widget.Material.ProgressBar"
@@ -64,17 +64,14 @@
         </LinearLayout>
 
 
-
-
         <androidx.core.widget.NestedScrollView
             android:id="@+id/homeFragmentNestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="56dp"
-            android:visibility="gone"
 
-            android:elevation="8dp"
             android:background="@color/productGridBackgroundColor"
+            android:elevation="8dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
@@ -119,10 +116,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/open_sans_semibold"
                         android:text="Aditya"
-                        android:textColor="#000000"
-                        android:textSize="35sp"
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline4"
                         app:layout_constraintBottom_toTopOf="@+id/UserBranchTextView"
                         app:layout_constraintStart_toEndOf="@+id/UserProfileImageCardView"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -132,10 +127,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/open_sans_semibold"
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
                         android:text="ISE"
-                        android:textColor="#000000"
-                        android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/UserProfileImageCardView"
                         app:layout_constraintTop_toBottomOf="@+id/UsernameTextView" />

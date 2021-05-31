@@ -20,6 +20,9 @@ class SignUpViewModel: ViewModel() {
 
     var email: String = ""
     var password: String = ""
+    var name: String = ""
+    var USN: String = ""
+
     val authSuccess = MutableLiveData<Boolean>()
     lateinit var firebaseUser: FirebaseUser
     lateinit var firebaseAuthLocal: FirebaseAuth
@@ -37,7 +40,7 @@ class SignUpViewModel: ViewModel() {
                     // [START update_profile]
                     val user = Firebase.auth.currentUser
                     val profileUpdates = userProfileChangeRequest {
-                        displayName = "Jane Q. User"
+                        displayName = name
                         photoUri = Uri.parse("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png")
                     }
                     user!!.updateProfile(profileUpdates)
