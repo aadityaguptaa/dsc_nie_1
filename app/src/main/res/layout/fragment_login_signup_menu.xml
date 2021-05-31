@@ -6,12 +6,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/LoginSignUpMenuLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/loginbg">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/LoginSignUpCodeImageView"
-            android:layout_width="150dp"
+            android:layout_width="250dp"
             android:layout_height="150dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
@@ -25,48 +24,38 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.42000002"
             app:layout_constraintVertical_chainStyle="packed"
-            app:srcCompat="@drawable/code" />
+            app:srcCompat="@drawable/ic_google_developers" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/LoginSignupPageLoginButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            style="@style/Widget.DSCNIE.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-
-            android:layout_marginBottom="8dp"
             android:text="@string/log_in"
-            android:textColor="#000000"
             app:icon="@drawable/ic_baseline_login_24"
             app:iconTint="#000000"
+            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toTopOf="@+id/LoginSignupPageSignUpButton"
             app:layout_constraintEnd_toEndOf="@+id/LoginSignUpCodeImageView"
             app:layout_constraintStart_toStartOf="@+id/LoginSignUpCodeImageView"
             app:layout_constraintTop_toBottomOf="@+id/LoginSignUpCodeImageView"
-            app:strokeColor="#000000" />
+             />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/LoginSignupPageSignUpButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            style="@style/Widget.DSCNIE.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-
-            android:layout_marginBottom="16dp"
             android:text="@string/sign_up"
-            android:textColor="#000000"
             app:icon="@drawable/ic_baseline_add_24"
             app:iconTint="#000000"
+            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/LoginSignUpCodeImageView"
             app:layout_constraintStart_toStartOf="@+id/LoginSignUpCodeImageView"
             app:layout_constraintTop_toBottomOf="@+id/LoginSignupPageLoginButton"
-            app:strokeColor="#000000" />
+             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
