@@ -33,6 +33,7 @@ class HomeFragment : Fragment() {
     lateinit var navController: NavController
     lateinit var viewModel: HomeFragmentViewModel
     lateinit var firebaseUser: FirebaseUser
+    lateinit var firebaseAuth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -46,7 +47,7 @@ class HomeFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(HomeFragmentViewModel::class.java)
 
-        val firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
         @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
         firebaseUser = firebaseAuth.currentUser
 
@@ -73,6 +74,7 @@ class HomeFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         navController = Navigation.findNavController(requireView())
+        firebaseAuth.signOut()
         return NavigationUI.onNavDestinationSelected(item, navController)
                 || super.onOptionsItemSelected(item)
     }

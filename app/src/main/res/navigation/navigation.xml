@@ -21,7 +21,8 @@
             app:destination="@id/managementTeamFragment" />
         <action
             android:id="@+id/action_homeFragment_to_loginSignupMenuFragment"
-            app:destination="@id/loginSignupMenuFragment" />
+            app:destination="@id/loginSignupMenuFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_homeFragment_to_pastEventsFragment"
             app:destination="@id/pastEventsFragment" />

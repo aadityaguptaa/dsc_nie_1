@@ -7,8 +7,10 @@
         android:title="@string/dsc_search_title"
         app:showAsAction="always" />
     <item
-        android:id="@+id/filter"
-        android:icon="@drawable/dsc_filter"
-        android:title="@string/dsc_filter_title"
-        app:showAsAction="always" />
+        android:id="@+id/loginSignupMenuFragment"
+        android:title="@string/dsc_sign_out"
+        android:iconTint="@color/black"
+        android:contentDescription="@string/content_description_more"
+        app:showAsAction="never" />
+
 </menu>
