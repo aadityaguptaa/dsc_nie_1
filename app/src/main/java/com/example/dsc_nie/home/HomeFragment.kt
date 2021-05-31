@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dsc_nie.R
 import com.example.dsc_nie.adapter.UpcomingEventsRecyclerAdapter
 import com.example.dsc_nie.databinding.FragmentHomeBinding
-import com.example.dsc_nie.login_signup.UserGlobal
 import com.example.dsc_nie.model.AllCategory
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -40,45 +39,28 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_home, container, false
         )
 
-        firebaseUser = FirebaseAuth.getInstance().currentUser
-
-        Picasso.get().load(firebaseUser.photoUrl.toString()).into(binding.UserProfileImage)
-        binding.UsernameTextView.text = firebaseUser.displayName
-
-
-        //to set Action Bar
-        (activity as AppCompatActivity).setSupportActionBar(binding.appBar)
-        binding.appBar.setNavigationOnClickListener(
-            NavigationIconClickListener(
-                requireActivity(),
-                binding.homeFragmentNestedScrollView,
-                AccelerateDecelerateInterpolator(),
-                ContextCompat.getDrawable(requireContext(), R.drawable.dsc_branded_menu), // Menu open icon
-                ContextCompat.getDrawable(requireContext(), R.drawable.dsc_close_menu))
-        )
-
-
         viewModel = ViewModelProviders.of(this).get(HomeFragmentViewModel::class.java)
 
+        val firebaseAuth = FirebaseAuth.getInstance()
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+        firebaseUser = firebaseAuth.currentUser
 
-        viewModel.done.observe(viewLifecycleOwner, Observer { done->
-            setMainCategoryRecycler(viewModel.allCategory)
-            binding.homeFragmentProgressBar.visibility = View.GONE
-            binding.homeFragmentBackdrop.visibility = View.VISIBLE
-            binding.homeFragmentNestedScrollView.visibility = View.VISIBLE
-        })
+        //to set user profile image and name
+        setProfileImageAndName()
 
+        //to set Action Bar
+        setActionBar()
+
+        addObserverToViewModel()
+
+        setDrawableBackground()
 
         setHasOptionsMenu(true)
-        //requireActivity().actionBar!!.isHideOnContentScrollEnabled = true
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            binding.homeFragmentNestedScrollView.background = context?.getDrawable(R.drawable.dsc_product_grid_background_shape)
-        }
 
         return binding.root
     }
@@ -102,6 +84,41 @@ class HomeFragment : Fragment() {
         mainCategoryRecycler!!.adapter = mainRecyclerAdapter
     }
 
+    @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+    private fun setProfileImageAndName(){
+        if(firebaseUser.photoUrl != null){
+            Picasso.get().load(firebaseUser.photoUrl.toString()).into(binding.UserProfileImage)
+        }else{
+            binding.UserProfileImage.setImageResource(R.drawable.harry_potter)
+        }
+        if(firebaseUser.displayName != null){
+            binding.UsernameTextView.text = firebaseUser.displayName
+        }
+    }
 
+    private fun setActionBar(){
+        (activity as AppCompatActivity).setSupportActionBar(binding.appBar)
+        binding.appBar.setNavigationOnClickListener(
+            NavigationIconClickListener(
+                requireActivity(),
+                binding.homeFragmentNestedScrollView,
+                AccelerateDecelerateInterpolator(),
+                ContextCompat.getDrawable(requireContext(), R.drawable.dsc_branded_menu), // Menu open icon
+                ContextCompat.getDrawable(requireContext(), R.drawable.dsc_close_menu))
+        )
+    }
+
+    private fun addObserverToViewModel(){
+        viewModel.done.observe(viewLifecycleOwner, Observer { done->
+            setMainCategoryRecycler(viewModel.allCategory)
+            binding.homeFragmentProgressBar.visibility = View.GONE
+            binding.homeFragmentBackdrop.visibility = View.VISIBLE
+            binding.homeFragmentNestedScrollView.visibility = View.VISIBLE
+        })
+    }
+
+    private fun setDrawableBackground(){
+        binding.homeFragmentNestedScrollView.background = ContextCompat.getDrawable(requireContext(), R.drawable.dsc_product_grid_background_shape)
+    }
 
 }

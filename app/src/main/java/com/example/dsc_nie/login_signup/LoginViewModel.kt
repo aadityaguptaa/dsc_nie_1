@@ -31,8 +31,6 @@ class LoginViewModel: ViewModel() {
             OnCompleteListener<AuthResult> { task ->
                 if(task.isSuccessful){
                     firebaseUser = task.result!!.user
-                    UserGlobal.name = firebaseUser.displayName
-                    UserGlobal.imageUrl = firebaseUser.photoUrl.toString()
                     authSuccess.value = true
                 }else{
                     authSuccess.value = false
@@ -43,7 +41,4 @@ class LoginViewModel: ViewModel() {
 
 }
 
-object UserGlobal{
-    lateinit var name:String
-    lateinit var imageUrl:String
-}
+
