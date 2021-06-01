@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
-        android:id="@+id/search"
-        android:icon="@drawable/dsc_search"
-        android:title="@string/dsc_search_title"
+        android:id="@+id/filter"
+        android:icon="@drawable/dsc_filter"
+        android:title="@string/dsc_filter_title"
+        android:contentDescription="@string/content_description_more"
         app:showAsAction="always" />
     <item
         android:id="@+id/loginSignupMenuFragment"

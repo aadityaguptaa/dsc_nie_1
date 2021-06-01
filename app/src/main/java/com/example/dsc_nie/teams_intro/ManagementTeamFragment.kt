@@ -1,16 +1,22 @@
 package com.example.dsc_nie.teams_intro
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dsc_nie.R
 import com.example.dsc_nie.RecyclerAdapter
 import com.example.dsc_nie.databinding.FragmentManagementTeamBinding
+import com.example.dsc_nie.home.NavigationIconClickListener
+import com.google.firebase.auth.FirebaseAuth
 
 
 class ManagementTeamFragment : Fragment() {
@@ -24,18 +30,22 @@ class ManagementTeamFragment : Fragment() {
     private var emailList = mutableListOf<String>()
 
     private lateinit var recyclerView: RecyclerView
+    lateinit var binding: FragmentManagementTeamBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val binding: FragmentManagementTeamBinding = DataBindingUtil.inflate(
+        binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_management_team, container, false)
 
-        postToList()
+        setDrawableBackground()
 
-        recyclerView =  binding.managementTeamRecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-        recyclerView.adapter = RecyclerAdapter(titlesList, positionList, imagesList, descList, instagramList, facebookList, emailList)
+
+        postToList()
+        setRecycler()
+        setActionBar()
+        setHasOptionsMenu(true)
+
         return binding.root
     }
 
@@ -65,5 +75,51 @@ class ManagementTeamFragment : Fragment() {
 
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
+        menuInflater.inflate(R.menu.dsc_toolbar_menu, menu)
+        super.onCreateOptionsMenu(menu, menuInflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var navController = Navigation.findNavController(requireView())
+        FirebaseAuth.getInstance().signOut()
+        return NavigationUI.onNavDestinationSelected(item, navController)
+                || super.onOptionsItemSelected(item)
+    }
+
+    private fun setRecycler() {
+        recyclerView = binding.managementTeamRecyclerView
+        binding.managementTeamRecyclerView.setHasFixedSize(true)
+        val gridLayoutManager = GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, false)
+        gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return if (position % 3 == 2) 2 else 1
+            }
+        }
+        binding.managementTeamRecyclerView.layoutManager = gridLayoutManager
+        recyclerView.adapter = RecyclerAdapter(titlesList, positionList, imagesList, descList, instagramList, facebookList, emailList)
+
+        val largePadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing)
+        val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small)
+        binding.managementTeamRecyclerView.addItemDecoration(ProductGridItemDecoration(largePadding, smallPadding))
+
+    }
+
+    fun setActionBar(){
+        (activity as AppCompatActivity).setSupportActionBar(binding.managementTeamAppBar)
+        binding.managementTeamAppBar.setNavigationOnClickListener(
+            NavigationIconClickListener(
+                requireActivity(),
+                binding.managementTeamRecycler,
+                AccelerateDecelerateInterpolator(),
+                ContextCompat.getDrawable(requireContext(), R.drawable.dsc_branded_menu), // Menu open icon
+                ContextCompat.getDrawable(requireContext(), R.drawable.dsc_close_menu))
+        )
+    }
+
+    private fun setDrawableBackground(){
+        binding.managementTeamRecycler.background = ContextCompat.getDrawable(requireContext(), R.drawable.dsc_product_grid_background_shape)
     }
 }

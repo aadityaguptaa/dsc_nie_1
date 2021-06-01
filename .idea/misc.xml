@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/drawable/dsc_product_grid_background_shape.xml" value="0.1824074074074074" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/drawable/ic_google_developers.xml" value="0.1" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/drawable/ic_google_developers_01.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/drawable/ic_google_developers_svg.xml" value="0.11458333333333333" />
@@ -14,13 +15,20 @@
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/cat_row_items.xml" value="0.11348684210526316" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/dsc_backdrop.xml" value="0.11236338797814208" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/events_recycler_row_item.xml" value="0.11646174863387979" />
-        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_about_us.xml" value="0.11655405405405406" />
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_home.xml" value="0.11348684210526316" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_login.xml" value="0.1014344262295082" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_login_material_fragment.xml" value="0.1" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_login_signup_menu.xml" value="0.11348684210526316" />
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_management_team.xml" value="0.1796875" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_past_events.xml" value="0.11646174863387979" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_sign_up.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/fragment_tech_team.xml" value="0.1" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/past_event_item_layout.xml" value="0.11646174863387979" />
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/team_item_layout.xml" value="0.11655405405405406" />
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/team_item_layout_one.xml" value="0.11655405405405406" />
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/team_item_layout_three.xml" value="0.1796875" />
+        <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/layout/team_item_layout_two.xml" value="0.11655405405405406" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/menu/dsc_toolbar_menu.xml" value="0.11348684210526316" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/menu/shr_toolbar_menu.xml" value="0.131640625" />
         <entry key="..\:/Users/rocko/AndroidStudioProjects/DSCNIE2/app/src/main/res/menu/top_app_bar.xml" value="0.11348684210526316" />

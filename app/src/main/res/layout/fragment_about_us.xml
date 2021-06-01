@@ -15,9 +15,8 @@
         android:id="@+id/AboutLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
         android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="16dp"
         tools:context=".AboutUsFragment">
 
 
@@ -75,13 +74,12 @@
 
                     <TextView
                         android:id="@+id/AboutScrollTextView"
+                        style="@style/TextAppearance.MdcTypographyStyles.Body1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/open_sans"
                         android:lineSpacingMultiplier="1.2"
-                        android:text="@string/description"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:text="@string/description" />
 
                 </LinearLayout>
             </ScrollView>
@@ -128,8 +126,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:layout_margin="8dp"
                         android:contentDescription="@string/instagram_description"
@@ -138,14 +136,13 @@
 
                     <TextView
                         android:id="@+id/DSCInstagramLinkTextView"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/open_sans"
                         android:linksClickable="true"
                         android:text="@string/dsc_instagram_link"
-                        android:textColor="#000000"
                         android:textColorLink="#201E1E" />
 
                 </LinearLayout>
@@ -157,8 +154,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:layout_margin="8dp"
                         android:contentDescription="@string/discord_description"
@@ -167,13 +164,12 @@
 
                     <TextView
                         android:id="@+id/DSCDiscordLinkTextView"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/open_sans"
                         android:text="@string/dsc_discord_link"
-                        android:textColor="#000000"
                         android:textColorLink="#201E1E" />
 
                 </LinearLayout>
@@ -193,8 +189,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:layout_margin="8dp"
                         android:contentDescription="@string/twitter_description"
@@ -203,13 +199,12 @@
 
                     <TextView
                         android:id="@+id/DSCTwitterLinkTextView"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/open_sans"
                         android:text="@string/dsc_twitter_link"
-                        android:textColor="#000000"
                         android:textColorLink="#201E1E" />
 
                 </LinearLayout>
@@ -221,8 +216,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:layout_margin="8dp"
                         android:contentDescription="@string/linkedin_description"
@@ -232,13 +227,12 @@
 
                     <TextView
                         android:id="@+id/DSCLinkedinLinkTextView"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
-                        android:fontFamily="@font/open_sans"
                         android:text="@string/dsc_linkedin_link"
-                        android:textColor="#000000"
                         android:textColorLink="#201E1E" />
 
                 </LinearLayout>
