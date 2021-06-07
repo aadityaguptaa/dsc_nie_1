@@ -128,5 +128,11 @@
         <argument
             android:name="imageId"
             app:argType="integer" />
+        <argument
+            android:name="titleText"
+            app:argType="string" />
+        <argument
+            android:name="designationText"
+            app:argType="string" />
     </fragment>
 </navigation>

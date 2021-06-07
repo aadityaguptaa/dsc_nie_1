@@ -29,9 +29,7 @@ class RecyclerAdapter( private var titles: List<String>, private var details: Li
 
 
         val itemTitle: TextView = itemView.findViewById(R.id.CoreName)
-/*
         val itemDetails: TextView = itemView.findViewById(R.id.CorePosition)
-*/
         val itemPicture: ImageView = itemView.findViewById(R.id.CoreImage)
 /*
         val itemDescription: TextView = itemView.findViewById(R.id.CoreDescription)
@@ -75,15 +73,15 @@ class RecyclerAdapter( private var titles: List<String>, private var details: Li
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemTitle.text = titles[position]
+        holder.itemTitle.transitionName = titles[position]
 /*
         holder.itemDetails.text = details[position]
 */
         holder.itemPicture.setImageResource(images[position])
         holder.itemPicture.transitionName = position.toString()
 
-/*
-        holder.itemDescription.text = description[position]
-*/
+        holder.itemDetails.text = details[position]
+        holder.itemDetails.transitionName = details[position]
 
         //this shit is to turn TextViews into hyperlinks... idk why it's this complex ;-;
         /*holder.coreEmail.movementMethod = LinkMovementMethod.getInstance()
@@ -95,9 +93,11 @@ class RecyclerAdapter( private var titles: List<String>, private var details: Li
 */
         holder.cardView.setOnClickListener { view: View ->
             val extras = FragmentNavigatorExtras(
-                view.findViewById<ImageView>(R.id.CoreImage) to "ababab"
+                view.findViewById<ImageView>(R.id.CoreImage) to "imageTransition",
+                view.findViewById<TextView>(R.id.CoreName) to "titleTransition",
+                view.findViewById<TextView>(R.id.CorePosition) to "designationTransition"
             )
-            view.findNavController().navigate(TechTeamFragmentDirections.actionTechTeamFragmentToTeamMemberDetailsFragment(images[position]),  extras)
+            view.findNavController().navigate(TechTeamFragmentDirections.actionTechTeamFragmentToTeamMemberDetailsFragment(images[position], titles[position], details[position]),  extras)
         }
     }
 

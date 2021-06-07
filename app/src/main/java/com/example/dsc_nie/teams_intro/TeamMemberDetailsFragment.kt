@@ -31,6 +31,9 @@ class TeamMemberDetailsFragment : Fragment() {
         )
         // Inflate the layout for this fragment
         binding.teamImage.setImageResource(args.imageId)
+        binding.coreTitle.text= args.titleText
+        binding.coreDesignation.text = args.designationText
+        binding.coreDescription.text = getString(R.string.adityaDescription)
         return binding.root
     }
 
