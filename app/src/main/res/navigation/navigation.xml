@@ -45,7 +45,11 @@
     <fragment
         android:id="@+id/managementTeamFragment"
         android:name="com.example.dsc_nie.teams_intro.ManagementTeamFragment"
-        android:label="ManagementTeamFragment" />
+        android:label="ManagementTeamFragment" >
+        <action
+            android:id="@+id/action_managementTeamFragment_to_teamMemberDetailsFragment"
+            app:destination="@id/teamMemberDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginSignupMenuFragment"
         android:name="com.example.dsc_nie.login_signup.LoginSignupMenuFragment"

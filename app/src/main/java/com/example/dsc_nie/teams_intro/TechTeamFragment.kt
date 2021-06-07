@@ -7,13 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dsc_nie.R
-import com.example.dsc_nie.RecyclerAdapter
+import com.example.dsc_nie.TechTeamRecyclerAdapter
 import com.example.dsc_nie.databinding.FragmentTechTeamBinding
 import com.example.dsc_nie.home.NavigationIconClickListener
 import com.google.firebase.auth.FirebaseAuth
@@ -31,6 +32,7 @@ class TechTeamFragment : Fragment() {
     private var emailList = mutableListOf<String>()
 
     lateinit var binding: FragmentTechTeamBinding
+    lateinit var viewModel: TechTeamViewModel
     private lateinit var recyclerView: RecyclerView
 
 
@@ -41,11 +43,16 @@ class TechTeamFragment : Fragment() {
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_tech_team, container, false)
 
+       viewModel = ViewModelProviders.of(this).get(TechTeamViewModel::class.java)
+
+
+        viewModel.ini.observe(viewLifecycleOwner, Observer { b ->
+                postToList()
+                setRecycler()
+
+        })
+
         setDrawableBackground()
-
-
-        postToList()
-        setRecycler()
         setActionBar()
         setHasOptionsMenu(true)
 
@@ -75,7 +82,7 @@ class TechTeamFragment : Fragment() {
             }
         }
         binding.techTeamRecyclerView.layoutManager = gridLayoutManager
-        recyclerView.adapter = RecyclerAdapter(titlesList, positionList, imagesList, descList, instagramList, facebookList, emailList)
+        recyclerView.adapter = TechTeamRecyclerAdapter(titlesList, positionList, imagesList, descList, instagramList, facebookList, emailList)
 
         val largePadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing)
         val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small)
@@ -95,6 +102,13 @@ class TechTeamFragment : Fragment() {
     }
 
     private fun postToList() {
+        titlesList.clear()
+        positionList.clear()
+        imagesList.clear()
+        descList.clear()
+        instagramList.clear()
+        facebookList.clear()
+        emailList.clear()
         addToList(getString(R.string.pratyusha), getString(R.string.dsc_lead), R.drawable.pratyushaone, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
         addToList(getString(R.string.aditya), getString(R.string.android_lead), R.drawable.adityaone, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
         addToList(getString(R.string.iresh), getString(R.string.web_dev_lead_lead), R.drawable.iresh, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))

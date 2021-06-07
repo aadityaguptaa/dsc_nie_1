@@ -10,10 +10,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dsc_nie.ManagementTeamRecyclerAdapter
 import com.example.dsc_nie.R
-import com.example.dsc_nie.RecyclerAdapter
+import com.example.dsc_nie.TechTeamRecyclerAdapter
 import com.example.dsc_nie.databinding.FragmentManagementTeamBinding
 import com.example.dsc_nie.home.NavigationIconClickListener
 import com.google.firebase.auth.FirebaseAuth
@@ -60,6 +60,13 @@ class ManagementTeamFragment : Fragment() {
     }
 
     private fun postToList(){
+        titlesList.clear()
+        positionList.clear()
+        imagesList.clear()
+        descList.clear()
+        instagramList.clear()
+        facebookList.clear()
+        emailList.clear()
         addToList(getString(R.string.aditi), getString(R.string.creativity_lead),  R.drawable.aditi, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
         addToList(getString(R.string.deepthi), getString(R.string.editorial_lead),  R.drawable.deepthi, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
         addToList(getString(R.string.dharitri), getString(R.string.events_lead),  R.drawable.dharitri, getString(R.string.adityaDescription), getString(R.string.aditya_instagram), getString(R.string.aditya_linkedin), getString(R.string.aditya_email))
@@ -99,7 +106,7 @@ class ManagementTeamFragment : Fragment() {
             }
         }
         binding.managementTeamRecyclerView.layoutManager = gridLayoutManager
-        recyclerView.adapter = RecyclerAdapter(titlesList, positionList, imagesList, descList, instagramList, facebookList, emailList)
+        recyclerView.adapter = ManagementTeamRecyclerAdapter(titlesList, positionList, imagesList, descList, instagramList, facebookList, emailList)
 
         val largePadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing)
         val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small)

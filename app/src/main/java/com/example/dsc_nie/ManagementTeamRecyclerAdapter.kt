@@ -1,27 +1,18 @@
 package com.example.dsc_nie
 
-import android.os.Bundle
-import android.text.Html
-import android.text.Layout
-import android.text.method.LinkMovementMethod
-import android.transition.AutoTransition
-import android.transition.TransitionManager
 import android.view.LayoutInflater
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import android.view.View
-import androidx.fragment.app.Fragment
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dsc_nie.teams_intro.ManagementTeamFragmentDirections
 import com.example.dsc_nie.teams_intro.TechTeamFragmentDirections
 
-class RecyclerAdapter( private var titles: List<String>, private var details: List<String>, private var images: List<Int>, private var description: List<String>, private var instagramLink: List<String>, private var linkedinLink: List<String>, private var emailLink: List<String>) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class ManagementTeamRecyclerAdapter(private var titles: List<String>, private var details: List<String>, private var images: List<Int>, private var description: List<String>, private var instagramLink: List<String>, private var linkedinLink: List<String>, private var emailLink: List<String>) : RecyclerView.Adapter<ManagementTeamRecyclerAdapter.ViewHolder>() {
 
 
 
@@ -31,9 +22,9 @@ class RecyclerAdapter( private var titles: List<String>, private var details: Li
         val itemTitle: TextView = itemView.findViewById(R.id.CoreName)
         val itemDetails: TextView = itemView.findViewById(R.id.CorePosition)
         val itemPicture: ImageView = itemView.findViewById(R.id.CoreImage)
-/*
-        val itemDescription: TextView = itemView.findViewById(R.id.CoreDescription)
-*/
+        /*
+                val itemDescription: TextView = itemView.findViewById(R.id.CoreDescription)
+        */
         val cardView: CardView = itemView.findViewById(R.id.pastEventRecyclerCardView)
 
 
@@ -97,7 +88,7 @@ class RecyclerAdapter( private var titles: List<String>, private var details: Li
                 view.findViewById<TextView>(R.id.CoreName) to "titleTransition",
                 view.findViewById<TextView>(R.id.CorePosition) to "designationTransition"
             )
-            view.findNavController().navigate(TechTeamFragmentDirections.actionTechTeamFragmentToTeamMemberDetailsFragment(images[position], titles[position], details[position]),  extras)
+            view.findNavController().navigate(ManagementTeamFragmentDirections.actionManagementTeamFragmentToTeamMemberDetailsFragment(images[position], titles[position], details[position]),  extras)
         }
     }
 
