@@ -37,7 +37,11 @@
     <fragment
         android:id="@+id/techTeamFragment"
         android:name="com.example.dsc_nie.teams_intro.TechTeamFragment"
-        android:label="TechTeamFragment" />
+        android:label="TechTeamFragment" >
+        <action
+            android:id="@+id/action_techTeamFragment_to_teamMemberDetailsFragment"
+            app:destination="@id/teamMemberDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/managementTeamFragment"
         android:name="com.example.dsc_nie.teams_intro.ManagementTeamFragment"
@@ -116,4 +120,13 @@
         android:name="com.example.dsc_nie.login_signup.login_material_fragment"
         android:label="fragment_login_material_fragment"
         tools:layout="@layout/fragment_login_material_fragment" />
+    <fragment
+        android:id="@+id/teamMemberDetailsFragment"
+        android:name="com.example.dsc_nie.teams_intro.TeamMemberDetailsFragment"
+        android:label="fragment_team_member_details"
+        tools:layout="@layout/fragment_team_member_details" >
+        <argument
+            android:name="imageId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

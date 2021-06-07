@@ -127,6 +127,9 @@ So come join us on this amazing journey!\n\nWe are new so we have the fresh scen
     <string name="dsc_account_label">My Account</string>
     <string name="shr_logo_content_description">Shrine Logo</string>
 
+    //motion stuff
+    <string name="email_card_transition_name">email_card</string>
+    <string name="email_card_detail_transition_name">email_card_detail</string>
 
 
 </resources>
